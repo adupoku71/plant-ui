@@ -31,6 +31,46 @@
       color: yellow;
     }
   }
+
+  @keyframes upDown {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1rem);
+    }
+  }
+  @keyframes rotateEffect {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes scaleEffect {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(0.8);
+    }
+  }
+  .movingY {
+    animation: upDown 3s linear infinite;
+  }
+
+  .rotating {
+    animation: rotateEffect 15s linear infinite;
+  }
+
+  .scaling {
+    animation: scaleEffect 3s linear infinite;
+  }
 }
 
 body {
@@ -42,4 +82,33 @@ body {
 }
 .nav-link:hover {
   @apply text-yellow-500;
+}
+
+section {
+  @apply py-20 md:py-28;
+}
+
+h1 {
+  @apply text-3xl md:text-4xl xl:text-5xl font-bold;
+}
+
+/* button  */
+
+.btn {
+  @apply border rounded-md bg-yellow-500 py-2 px-5 border-yellow-500 duration-300;
+}
+
+.btn span {
+  @apply font-bold;
+}
+
+.btn:hover {
+  @apply opacity-90 cursor-pointer;
+}
+
+.btn_outline {
+  @apply border-yellow-500 bg-transparent;
+}
+.btn_outline:hover {
+  @apply bg-yellow-500;
 }
