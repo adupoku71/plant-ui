@@ -1,1 +1,45 @@
 @import "tailwindcss";
+
+@theme {
+  /* 1. Define your breakpoints as custom properties */
+  --breakpoint-sm: 340px;
+  --breakpoint-md: 540px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1180px;
+
+  /* 2. Define container settings as custom properties */
+  --container-padding: 12px;
+  --container-padding-md: 32px;
+  --container-max-width: 100%;
+}
+
+/* 3. Implement container styles OUTSIDE @theme */
+@layer utilities {
+  .container {
+    /* width: 100%; */
+    /* max-width: var(--container-max-width); */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  @media (min-width: var(--breakpoint-md)) {
+    .container {
+      padding-left: var(--container-padding-md);
+      padding-right: var(--container-padding-md);
+      color: yellow;
+    }
+  }
+}
+
+body {
+  @apply bg-green-950 text-white tracking-wider;
+}
+
+.nav-link {
+  @apply text-lg font-bold duration-300;
+}
+.nav-link:hover {
+  @apply text-yellow-500;
+}
