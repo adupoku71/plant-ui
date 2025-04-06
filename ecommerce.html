@@ -19,12 +19,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <link rel="stylesheet" href="src/output.css" /> -->
   </head>
-  <body class="bg-gray-50">
+  <body class="bg-white">
     <!-- Mobile Layout (shown on small screens) -->
 
     <div
       id="mobile-nav"
-      class="mobile-nav fixed top-0 z-50 flex bg-white py-3 w-full items-center justify-between px-2 shadow-sm lg:hidden"
+      class="mobile-nav fixed top-0 z-50 flex bg-white py-2.5 w-full items-center justify-between px-2 lg:hidden border-b border-gray-300 pl-6"
     >
       <!-- Logo on the left -->
       <div class="flex items-center">
@@ -35,12 +35,12 @@
       </div>
 
       <!-- Search Bar on the right -->
-      <div class="ml-4 md:min-w-sm max-w-4xs min-w-3xs flex-1">
+      <div class="ml-4 md:min-w-sm w-64">
         <div class="relative">
           <input
             type="text"
             placeholder="Search..."
-            class="w-full rounded-full bg-gray-100 px-4 py-1 text-sm focus:border-blue-500 focus:ring-blue-500"
+            class="w-full rounded-full bg-gray-100 px-4 py-1.5 text-sm focus:border-blue-500 focus:ring-blue-500"
           />
           <i
             class="ri-search-line absolute top-1 text-sm right-3 text-gray-400"
@@ -51,11 +51,11 @@
 
     <!-- Bottom Menu Bar -->
     <div
-      class="fixed z-50 bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200"
+      class="fixed z-50 bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 md:hidden"
     >
       <div class="flex justify-around items-center pt-2 pb-1.5">
         <!-- Home -->
-        <a href="#" class="flex flex-col items-center text-blue-600">
+        <a href="#" class="flex flex-col items-center text-pink-300">
           <span class="material-icons h-full">home</span>
           <span class="text-xs">Home</span>
         </a>
@@ -134,26 +134,34 @@
       </h2> -->
 
       <!-- Filter section  -->
-      <div id="filter-section" class="w-full lg:mt-2">
+      <div id="filter-section" class="w-full lg:mt-2 text-sm">
         <div class="w-full items-center lg:max-w-7xl lg:mx-auto">
           <div
-            class="lg:hidden flex sm:justify-end justify-between sm:gap-6 px-2 pb-1.5"
+            class="lg:hidden flex sm:justify-end justify-between sm:gap-6 px-6 bg-white"
           >
-            <div class="relative">
+            <div class="relative pb-2.5">
               <button
                 id="all"
-                class="cursor-pointer h-full tracking-widest font-medium border-b-2 border-blue-500 pb-1"
+                class="cursor-pointer h-full tracking-widest font-medium text-pink-300 pt-1"
               >
                 ALL
-                <!-- <i class="ri-arrow-down-s-line text-lg"></i> -->
+                <!-- <i class="ri-arrow-down-s-line text-lg invisible"></i> -->
+                <div class="absolute bottom-0 w-full bg-pink-300 h-0.5"></div>
               </button>
             </div>
-            <div class="relative">
+            <div class="relative pb-2.5">
               <button
-                class="filter-trigger cursor-pointer text-gray-800 w-full font-medium tracking-wider space-x-2.5 pb-1"
+                class="filter-trigger cursor-pointer text-gray-800 w-full font-medium tracking-wider"
               >
-                <span>BAGS</span> <i class="ri-arrow-down-s-line text-lg"></i>
+                <span>BAGS</span>
+                <!-- <div class="absolute -right-6 bottom-2"> -->
+                <i class="ri-arrow-down-s-line text-lg"></i>
+                <!-- </div> -->
+                <div
+                  class="bottom-line bg-pink-300 absolute bottom-0 w-full bottom-line h-0.5 hidden"
+                ></div>
               </button>
+
               <div
                 class="filter-dropdown top-[38px] absolute w-48 left-0 bg-white shadow-md z-20 transition-all duration-200 ease-in-out h-0 overflow-hidden"
               >
@@ -166,13 +174,17 @@
                 </div>
               </div>
             </div>
-            <div class="relative">
+            <div class="relative pb-2.5">
               <button
-                class="filter-trigger cursor-pointer text-gray-800 w-full text-left font-medium tracking-wider space-x-2.5 pb-1"
+                class="filter-trigger cursor-pointer text-gray-800 w-full text-left font-medium tracking-wider"
               >
                 <span>FOOTWARE</span>
+                <div
+                  class="bottom-line bg-pink-300 absolute bottom-0 w-full bottom-line h-0.5 hidden"
+                ></div>
                 <i class="ri-arrow-down-s-line text-lg"></i>
               </button>
+
               <div
                 class="filter-dropdown top-[38px] absolute w-48 left-0 bg-white shadow-md z-20 transition-all duration-200 ease-in-out h-0 overflow-hidden"
               >
@@ -186,13 +198,17 @@
               </div>
             </div>
 
-            <div class="relative">
+            <div class="relative pb-2.5">
               <button
-                class="filter-trigger cursor-pointer text-gray-800 w-full font-medium tracking-wider flex space-x-2.5 justify-between items-center pb-1"
+                class="filter-trigger cursor-pointer text-gray-800 w-full font-medium tracking-wider flex justify-between items-center"
               >
                 <span>PRICE</span>
+                <div
+                  class="bottom-line bg-pink-300 absolute bottom-0 w-full bottom-line h-0.5 hidden"
+                ></div>
                 <i class="ri-arrow-down-s-line text-lg"></i>
               </button>
+
               <div
                 class="filter-dropdown top-[38px] absolute w-48 right-0 bg-white shadow-md z-20 transition-all duration-200 ease-in-out h-0 overflow-hidden"
               >
