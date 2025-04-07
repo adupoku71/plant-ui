@@ -140,13 +140,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeAllDropdowns = () => {
     filterTriggers.forEach((trigger) => {
       trigger.querySelector(".bottom-line")?.classList.add("hidden")
-      trigger.classList.remove("text-pink-300")
+      //   trigger.classList.toggle("text-pink-300")
     })
 
     filterDropdowns.forEach((dropdown) => {
       const height = `h-${dropdown.scrollHeight}px`
 
-      dropdown.classList.remove("h-[140px]")
+      dropdown.classList.remove(height)
     })
   }
 
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (shouldStick) {
       filterSection.classList.add(
         "fixed",
-        `top-[${navbarHeight - 1}px]`,
+        `top-[${navbarHeight}px]`,
         "w-full",
         "z-50",
         "shadow-sm",
@@ -171,8 +171,8 @@ document.addEventListener("DOMContentLoaded", () => {
         `top-[${navbarHeight}px]`,
         "w-full",
         "z-50",
-        "shadow-sm",
-        "border-t"
+        "shadow-sm"
+        // "border-t"
       )
     }
   }
@@ -183,6 +183,20 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation()
       toggleDropdown(trigger)
     })
+  })
+
+  const search = document.getElementById("search")
+  const overlay = document.getElementById("search-overlay")
+  const searchButton = document.getElementById("search-button")
+  const back = document.getElementById("back")
+  const logo = document.getElementById("logo")
+
+  search.addEventListener("click", () => {
+    console.log("clicked")
+    overlay.classList.toggle("hidden")
+    searchButton.classList.toggle("hidden")
+    back.classList.toggle("hidden")
+    logo.classList.toggle("hidden")
   })
 
   document.addEventListener("click", closeAllDropdowns)

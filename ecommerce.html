@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- <link rel="stylesheet" href="src/output.css" /> -->
   </head>
   <body class="bg-white">
@@ -24,20 +25,22 @@
 
     <div
       id="mobile-nav"
-      class="mobile-nav fixed top-0 z-50 flex bg-white py-2.5 w-full items-center justify-between px-2 lg:hidden border-b border-gray-300 pl-6"
+      class="mobile-nav fixed top-0 z-[100] flex bg-white w-full gap-4 items-center justify-between px-6 border-b border-gray-300 md:px-8 h-14"
     >
       <!-- Logo on the left -->
-      <div class="flex items-center">
+      <div class="flex items-center" id="logo">
         <!-- Replace this text with your logo img tag when ready -->
         <span class="font-bold text-black">SHOP</span>
         <!-- Or use this for an actual logo image: -->
         <!-- <img src="your-logo.png" alt="Company Logo" class="h-8 w-auto"> -->
       </div>
-
+      <!-- back button  -->
+      <div id="back" class="hidden">back</div>
       <!-- Search Bar on the right -->
-      <div class="ml-4 md:min-w-sm w-64">
+      <div class="ml-4 md:min-w-sm w-64 max-md:flex-1">
         <div class="relative">
           <input
+            id="search"
             type="text"
             placeholder="Search..."
             class="w-full rounded-full bg-gray-100 px-4 py-1.5 text-sm focus:border-blue-500 focus:ring-blue-500"
@@ -46,6 +49,60 @@
             class="ri-search-line absolute top-1 text-sm right-3 text-gray-400"
           ></i>
         </div>
+        <!-- Search Overlay -->
+        <div
+          id="search-overlay"
+          class="fixed max-md:bottom-0 max-md:left-0 md:absolute w-full md:w-[500px] top-14 bg-green-200 hidden"
+        >
+          <!-- Mobile: Fullscreen | Desktop: Dropdown under navbar -->
+          <div
+            class="md:max-w-2xl md:mx-auto md:rounded-md md:shadow-xl md:border"
+          >
+            <!-- Search Header -->
+
+            <!-- Search Content -->
+            <div class="p-4">
+              <!-- Recent Searches -->
+              <div class="mb-6">
+                <h3 class="text-sm font-semibold text-gray-700 mb-2">
+                  Recent Searches
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                    >Sneakers</span
+                  >
+                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                    >Handbags</span
+                  >
+                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                    >Watches</span
+                  >
+                </div>
+              </div>
+
+              <!-- Suggested Searches -->
+              <div>
+                <h3 class="text-sm font-semibold text-gray-700 mb-2">
+                  Suggested
+                </h3>
+                <ul class="space-y-2">
+                  <li class="flex items-center p-2 hover:bg-gray-50 rounded-md">
+                    <i class="material-icons text-gray-400 mr-2">search</i>
+                    <span>Men's running shoes</span>
+                  </li>
+                  <li class="flex items-center p-2 hover:bg-gray-50 rounded-md">
+                    <i class="material-icons text-gray-400 mr-2">search</i>
+                    <span>Women's handbags 2024</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- search button -->
+      <div id="search-button" class="hidden">
+        <h1>search</h1>
       </div>
     </div>
 
@@ -71,8 +128,8 @@
           <span class="material-symbols-outlined">shopping_cart</span>
           <span class="text-xs">Cart</span>
           <span
-            class="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
-            >16</span
+            class="absolute -top-1 -right-2 bg-pink-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
+            >4</span
           >
         </a>
 
@@ -83,182 +140,114 @@
         </a>
       </div>
     </div>
+    <div class="bg-amber-300 h-64 mt-14 hidden md:block">hlkhla</div>
 
     <!-- Desktop Layout (hidden on mobile) -->
-    <nav
-      class="z-50 h-16 hidden lg:block bg-white shadow-md fixed top-0 ring-0 w-full"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <a href="#" class="text-xl font-bold text-gray-900">ShopLogo</a>
-
-          <!-- Search Bar -->
-          <div class="relative w-1/3">
-            <input
-              type="text"
-              placeholder="Search for products..."
-              class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
-            />
-            <i
-              class="ri-search-line absolute right-3 top-2.5 text-gray-400"
-            ></i>
-          </div>
-
-          <!-- Cart Button -->
-          <a href="#" class="relative flex items-center">
-            <i class="ri-shopping-cart-2-line text-2xl text-gray-600"></i>
-            <span
-              class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full"
-              >3</span
-            >
-          </a>
-        </div>
-      </div>
-    </nav>
 
     <!-- Desktop Content -->
-    <div class="bg-amber-300 hidden lg:block p-4 mt-15">
-      <!-- Your desktop content goes here -->
-      <p class="text-gray-500 text-center mt-10">
-        Desktop content will appear here
-      </p>
+    <!-- <div class="bg-amber-300 hidden lg:block p-4 mt-16">
+      <p class="text-gray-500 text-center">Desktop content will appear here</p>
+    </div> -->
+    <div
+      id="filter-section"
+      class="w-full text-sm filter-section transition-all duration-300 ease-in-out mt-24 sticky z-[60]"
+    >
+      <div class="w-full items-center lg:max-w-7xl lg:mx-auto z-50">
+        <div class="flex sm:justify-end justify-between pt-1 sm:gap-6 px-6">
+          <div class="relative pb-2">
+            <button
+              id="all"
+              class="cursor-pointer h-full tracking-widest font-medium text-pink-300 pt-1"
+            >
+              ALL
+              <!-- <i class="ri-arrow-down-s-line text-lg invisible"></i> -->
+              <div class="absolute bottom-0 w-full bg-pink-300 h-0.5"></div>
+            </button>
+          </div>
+          <div class="relative pb-2">
+            <button
+              class="filter-trigger cursor-pointer text-gray-800 w-full font-medium tracking-wider"
+            >
+              <span>BAGS</span>
+              <!-- <div class="absolute -right-6 bottom-2"> -->
+              <i class="ri-arrow-down-s-line text-lg"></i>
+              <!-- </div> -->
+              <div
+                class="bottom-line bg-pink-300 absolute bottom-0 w-full bottom-line h-0.5 hidden"
+              ></div>
+            </button>
+
+            <div
+              class="filter-dropdown top-[38px] absolute w-48 left-0 bg-white shadow-md transition-all duration-200 ease-in-out h-0 overflow-hidden"
+            >
+              <div class="p-3 space-y-1 bg-white">
+                <div class="flex items-center hover:bg-gray-50">All</div>
+                <div class="flex items-center hover:bg-gray-50">Shoes</div>
+                <div class="flex items-center hover:bg-gray-50">Slippers</div>
+                <div class="flex items-center hover:bg-gray-50">Heels</div>
+                <div class="flex items-center hover:bg-gray-50">Sneakers</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative pb-2">
+            <button
+              class="filter-trigger cursor-pointer text-gray-800 w-full text-left font-medium tracking-wider"
+            >
+              <span>FOOTWARE</span>
+              <div
+                class="bottom-line bg-pink-300 absolute bottom-0 w-full bottom-line h-0.5 hidden"
+              ></div>
+              <i class="ri-arrow-down-s-line text-lg"></i>
+            </button>
+
+            <div
+              class="filter-dropdown top-[38px] absolute w-48 left-0 bg-white shadow-md z-20 transition-all duration-200 ease-in-out h-0 overflow-hidden"
+            >
+              <div class="p-3 space-y-1 bg-white">
+                <div class="flex items-center hover:bg-gray-50">All</div>
+                <div class="flex items-center hover:bg-gray-50">Shoes</div>
+                <div class="flex items-center hover:bg-gray-50">Slippers</div>
+                <div class="flex items-center hover:bg-gray-50">Heels</div>
+                <div class="flex items-center hover:bg-gray-50">Sneakers</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative pb-2 z-50">
+            <button
+              class="filter-trigger cursor-pointer text-gray-800 w-full text-left font-medium tracking-wider"
+            >
+              <span>PRICE</span>
+              <div
+                class="bottom-line bg-pink-300 absolute bottom-0 w-full bottom-line h-0.5 hidden"
+              ></div>
+              <i class="ri-arrow-down-s-line text-lg"></i>
+            </button>
+
+            <div
+              class="filter-dropdown top-[0px] absolute w-48 right-0 bg-white shadow-md z-[70] transition-all duration-200 ease-in-out h-0 overflow-hidden"
+            >
+              <div class="p-3 space-y-1 bg-white">
+                <div class="flex items-center hover:bg-gray-50">All</div>
+                <div class="flex items-center hover:bg-gray-50">Shoes</div>
+                <div class="flex items-center hover:bg-gray-50">Slippers</div>
+                <div class="flex items-center hover:bg-gray-50">Heels</div>
+                <div class="flex items-center hover:bg-gray-50">Sneakers</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Products  -->
     <section
-      class="max-w-6xl mt-0 pt-20 mx-auto pb-20 px-0 md:px-3 lg:pb-12 lg:mt-0"
+      class="max-w-6xl md:mt-0 pt-1 mx-auto pb-20 px-0 md:px-3 lg:pb-12 z-40"
     >
       <!-- <h2
         class="cursor-pointer text-center text-lg font-bold text-gray-900 mb-2"
       >
-        Take Your Pick
-      </h2> -->
-
+      Take Your Pick
+    </h2> -->
       <!-- Filter section  -->
-      <div id="filter-section" class="w-full lg:mt-2 text-sm">
-        <div class="w-full items-center lg:max-w-7xl lg:mx-auto">
-          <div
-            class="lg:hidden flex sm:justify-end justify-between sm:gap-6 px-6 bg-white"
-          >
-            <div class="relative pb-2.5">
-              <button
-                id="all"
-                class="cursor-pointer h-full tracking-widest font-medium text-pink-300 pt-1"
-              >
-                ALL
-                <!-- <i class="ri-arrow-down-s-line text-lg invisible"></i> -->
-                <div class="absolute bottom-0 w-full bg-pink-300 h-0.5"></div>
-              </button>
-            </div>
-            <div class="relative pb-2.5">
-              <button
-                class="filter-trigger cursor-pointer text-gray-800 w-full font-medium tracking-wider"
-              >
-                <span>BAGS</span>
-                <!-- <div class="absolute -right-6 bottom-2"> -->
-                <i class="ri-arrow-down-s-line text-lg"></i>
-                <!-- </div> -->
-                <div
-                  class="bottom-line bg-pink-300 absolute bottom-0 w-full bottom-line h-0.5 hidden"
-                ></div>
-              </button>
-
-              <div
-                class="filter-dropdown top-[38px] absolute w-48 left-0 bg-white shadow-md z-20 transition-all duration-200 ease-in-out h-0 overflow-hidden"
-              >
-                <div class="p-3 space-y-1 bg-white">
-                  <div class="flex items-center hover:bg-gray-50">All</div>
-                  <div class="flex items-center hover:bg-gray-50">Shoes</div>
-                  <div class="flex items-center hover:bg-gray-50">Slippers</div>
-                  <div class="flex items-center hover:bg-gray-50">Heels</div>
-                  <div class="flex items-center hover:bg-gray-50">Sneakers</div>
-                </div>
-              </div>
-            </div>
-            <div class="relative pb-2.5">
-              <button
-                class="filter-trigger cursor-pointer text-gray-800 w-full text-left font-medium tracking-wider"
-              >
-                <span>FOOTWARE</span>
-                <div
-                  class="bottom-line bg-pink-300 absolute bottom-0 w-full bottom-line h-0.5 hidden"
-                ></div>
-                <i class="ri-arrow-down-s-line text-lg"></i>
-              </button>
-
-              <div
-                class="filter-dropdown top-[38px] absolute w-48 left-0 bg-white shadow-md z-20 transition-all duration-200 ease-in-out h-0 overflow-hidden"
-              >
-                <div class="p-3 space-y-1 bg-white">
-                  <div class="flex items-center hover:bg-gray-50">All</div>
-                  <div class="flex items-center hover:bg-gray-50">Shoes</div>
-                  <div class="flex items-center hover:bg-gray-50">Slippers</div>
-                  <div class="flex items-center hover:bg-gray-50">Heels</div>
-                  <div class="flex items-center hover:bg-gray-50">Sneakers</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="relative pb-2.5">
-              <button
-                class="filter-trigger cursor-pointer text-gray-800 w-full font-medium tracking-wider flex justify-between items-center"
-              >
-                <span>PRICE</span>
-                <div
-                  class="bottom-line bg-pink-300 absolute bottom-0 w-full bottom-line h-0.5 hidden"
-                ></div>
-                <i class="ri-arrow-down-s-line text-lg"></i>
-              </button>
-
-              <div
-                class="filter-dropdown top-[38px] absolute w-48 right-0 bg-white shadow-md z-20 transition-all duration-200 ease-in-out h-0 overflow-hidden"
-              >
-                <div class="p-3 space-y-1 bg-white">
-                  <div class="flex items-center hover:bg-gray-50">All</div>
-                  <div class="flex items-center hover:bg-gray-50">Shoes</div>
-                  <div class="flex items-center hover:bg-gray-50">Slippers</div>
-                  <div class="flex items-center hover:bg-gray-50">Heels</div>
-                  <div class="flex items-center hover:bg-gray-50">Sneakers</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Desktop: Elegant inline filters -->
-          <div class="hidden lg:flex items-center space-x-6">
-            <div class="relative">
-              <button
-                class="filter-trigger font-medium text-gray-800 pb-1 border-b-2 border-blue-500"
-              >
-                Brand
-              </button>
-              <div
-                class="absolute left-0 mt-1 w-48 bg-white shadow-lg rounded-md z-20 py-1 hidden filter-dropdown"
-              >
-                <div class="p-2 hover:bg-gray-100">All Brands</div>
-                <div class="p-2 hover:bg-gray-100">Gucci</div>
-                <div class="p-2 hover:bg-gray-100">Prada</div>
-                <div class="p-2 hover:bg-gray-100">Louis Vuitton</div>
-              </div>
-            </div>
-
-            <div class="relative">
-              <button
-                class="filter-trigger font-medium text-gray-800 pb-1 border-b-2 border-blue-500"
-              >
-                Price
-              </button>
-              <div
-                class="absolute left-0 mt-1 w-48 bg-white shadow-lg rounded-md z-20 py-1 hidden filter-dropdown"
-              >
-                <div class="p-2 hover:bg-gray-100">All Prices</div>
-                <div class="p-2 hover:bg-gray-100">Under $100</div>
-                <div class="p-2 hover:bg-gray-100">$100 - $500</div>
-                <div class="p-2 hover:bg-gray-100">Over $500</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- <h2 class="text-xl font-bold text-gray-900 mb-6">Featured Products</h2> -->
       <div class="px- mt-2 md:px-0">
