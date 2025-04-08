@@ -25,7 +25,7 @@
 
     <div
       id="mobile-nav"
-      class="mobile-nav fixed top-0 z-[100] flex bg-white w-full gap-4 items-center justify-between px-6 border-b border-gray-300 md:px-8 h-14"
+      class="mobile-nav fixed top-0 z-[100] flex bg-white w-full items-center px-4 gap-3 border-b justify-between border-gray-300 md:px-24 h-14 md:gap-14 md:h-[70px]"
     >
       <!-- Logo on the left -->
       <div class="flex items-center" id="logo">
@@ -35,28 +35,34 @@
         <!-- <img src="your-logo.png" alt="Company Logo" class="h-8 w-auto"> -->
       </div>
       <!-- back button  -->
-      <div id="back" class="hidden">back</div>
       <!-- Search Bar on the right -->
-      <div class="ml-4 md:min-w-sm w-64 max-md:flex-1">
-        <div class="relative">
+      <div
+        class="md:min-w-[400px] lg:w-[500px] max-md:flex-1 bg-gray-50 flex md:h-10 py-1 md:border md:border-amber-400 md:py-0 rounded-full border-0 relative items-center md:bg-white pl-3"
+      >
+        <div class="search-icon">
+          <i class="ri-search-line top-1 text-sm left-3 text-gray-400"></i>
+        </div>
+        <div class="flex-1">
           <input
             id="search"
             type="text"
-            placeholder="Search..."
-            class="w-full rounded-full bg-gray-100 px-4 py-1.5 text-sm focus:border-blue-500 focus:ring-blue-500"
+            placeholder="search here"
+            class="border-0 outline-none focus:outline-none focus:ring-0 focus:border-0 focus:bg-transparent bg-transparent appearance-none focus:appearance-none w-full max-md:text-sm pl-2"
           />
-          <i
-            class="ri-search-line absolute top-1 text-sm right-3 text-gray-400"
-          ></i>
         </div>
+        <button
+          class="max-md:hidden h-full bg-amber-400 border-0 rounded-r-full px-4 text-lg font-bold text-white"
+        >
+          Search
+        </button>
         <!-- Search Overlay -->
         <div
           id="search-overlay"
-          class="fixed max-md:bottom-0 max-md:left-0 md:absolute w-full md:w-[500px] top-14 bg-white hidden"
+          class="max-md:fixed max-md:bottom-0 max-md:left-0 bg-white absolute w-full top-[39px] left-0 max-md:top-14 md:rounded-lg hidden"
         >
           <!-- Mobile: Fullscreen | Desktop: Dropdown under navbar -->
           <div
-            class="md:max-w-2xl md:mx-auto md:rounded-md md:shadow-xl md:border"
+            class="md:max-w-2xl md:mx-auto bg-inherit w-full md:rounded-lg md:shadow-md"
           >
             <!-- Search Header -->
 
@@ -100,9 +106,27 @@
           </div>
         </div>
       </div>
+
+      <!-- account and Cart  -->
+      <div id="account-and-cart" class="flex gap-3 items-center h-full">
+        <div class="hidden md:block">
+          <i class="ri-account-circle-fill text-3xl"></i>
+          <!-- <span class="material-icons">account_circle</span> -->
+        </div>
+
+        <a href="#" class="flex flex-col items-center text-gray-600 relative">
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span
+            class="absolute -top-1 -right-2 bg-pink-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
+            >4</span
+          >
+        </a>
+        <!-- </div> -->
+      </div>
       <!-- search button -->
-      <div id="search-button" class="hidden">
-        <h1>search</h1>
+
+      <div id="cancel" class="hidden">
+        <h1>Cancel</h1>
       </div>
     </div>
 
@@ -125,22 +149,18 @@
 
         <!-- Cart -->
         <a href="#" class="flex flex-col items-center text-gray-600 relative">
-          <span class="material-symbols-outlined">shopping_cart</span>
-          <span class="text-xs">Cart</span>
-          <span
-            class="absolute -top-1 -right-2 bg-pink-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
-            >4</span
-          >
+          <span class="material-icons">account_circle</span>
+          <span class="text-xs">Account</span>
         </a>
 
         <!-- Contact -->
         <a href="#" class="flex flex-col items-center text-gray-600">
           <span class="material-icons">contact_support</span>
-          <span class="text-xs">Contact</span>
+          <span class="text-xs">Contact Us</span>
         </a>
       </div>
     </div>
-    <div class="bg-amber-300 h-64 mt-14 hidden md:block">hlkhla</div>
+    <div class="bg-amber-300 h-64 mt-[70px] hidden md:block">hlkhla</div>
 
     <!-- Desktop Layout (hidden on mobile) -->
 
@@ -150,10 +170,12 @@
     </div> -->
     <div
       id="filter-section"
-      class="w-full text-sm filter-section transition-all duration-300 ease-in-out mt-24 sticky z-[60]"
+      class="w-full text-sm filter-section transition-all duration-300 ease-in-out mt-24 md:mt-8 sticky z-[60]"
     >
       <div class="w-full items-center lg:max-w-7xl lg:mx-auto z-50">
-        <div class="flex sm:justify-end justify-between pt-1 sm:gap-6 px-6">
+        <div
+          class="flex sm:justify-end justify-between pt-1 sm:gap-6 px-6 md:justify-start"
+        >
           <div class="relative pb-2">
             <button
               id="all"

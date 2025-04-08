@@ -1,106 +1,15 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   const filterDropDown = document.querySelectorAll(".filter-dropdown")
-
-//   // Filter Section Drop Down
-//   document.querySelectorAll(".filter-trigger").forEach((trigger) => {
-//     trigger.addEventListener("click", (e) => {
-//       e.stopPropagation()
-//       const bottomBorder = trigger.querySelector(".bottom-line")
-//       document.querySelectorAll(".filter-trigger").forEach((t) => {
-//         if (t != trigger)
-//           t.querySelector(".bottom-line")?.classList.add("hidden")
-
-//         // t.classList.remove("text-pink-300")
-//       })
-//       const dropdown = trigger.nextElementSibling
-//       trigger.classList.toggle("text-pink-300")
-//       bottomBorder.classList.toggle("hidden")
-//       //   bottomBorder.classList.toggle("bg-pink-300")
-
-//       if (dropdown) {
-//         const height = `h-[${dropdown.scrollHeight}px]`
-
-//         dropdown.classList.toggle(height)
-
-//         // Toggle dropdown height
-//         filterDropDown.forEach((d) => {
-//           if (d !== dropdown) {
-//             d.classList.remove(height)
-//           }
-//         })
-//       }
-//       //   const icon = trigger.querySelector("i")
-//     })
-//   })
-
-//   document.addEventListener("click", () => {
-//     console.log("clicked")
-
-//     document.querySelectorAll(".filter-trigger").forEach((d) => {
-//       d.querySelector(".bottom-line")?.classList.add("hidden")
-//       d.classList.remove("h-[160px]")
-//     })
-//   })
-//   document.addEventListener("click", () => {
-//     document.querySelectorAll(".filter-dropdown").forEach((d) => {
-//       d.classList.remove("h-[160px]")
-//     })
-//   })
-
-//   // Sticky FilterSEction
-//   const filterSection = document.getElementById("filter-section")
-//   const navbar = document.querySelector("#mobile-nav")
-//   const navbarHeight = navbar.offsetHeight
-//   //   const navbarHeight = 60
-//   const originalOffsetTop = filterSection.offsetTop
-
-//   window.addEventListener("scroll", () => {
-//     if (window.scrollY >= originalOffsetTop - navbarHeight) {
-//       // When sticky
-//       filterSection.classList.add(
-//         "fixed",
-//         `top-[${navbarHeight - 1}px]`,
-//         "w-full",
-//         "z-50",
-//         // "bg-gray-50",
-//         "shadow-sm",
-//         "left-0",
-//         "bg-white"
-//         // "pb-2"
-//         // "bg-blue-700"
-//         // "border-t"
-//         //   "border-gray-200"
-//       )
-//       filterSection.classList.remove("relative", "border-b", "py-2")
-//       //   document.querySelectorAll(".filter-trigger").forEach((filter) => {
-//       //     filter.classList.remove("border-b-2", "border-gray-300")
-//       //   })
-//     } else {
-//       // When normal
-//       filterSection.classList.remove(
-//         "fixed",
-//         `top-[${navbarHeight}px]`,
-//         "w-full",
-//         "z-50",
-//         // "bg-white",
-//         "shadow-sm",
-//         "border-t"
-//         // "pb-2"
-//       )
-//       //   filterSection.classList.add("relative", "py-2")
-//       // document.querySelectorAll(".filter-trigger").forEach((filter) => {
-//       //   filter.classList.add("border-b-2", "border-gray-300")
-//       // })
-//     }
-//   })
-// })
-
 document.addEventListener("DOMContentLoaded", () => {
   // Cache DOM elements
   const filterSection = document.getElementById("filter-section")
   const navbar = document.querySelector("#mobile-nav")
   const filterTriggers = document.querySelectorAll(".filter-trigger")
   const filterDropdowns = document.querySelectorAll(".filter-dropdown")
+  const cancel = document.getElementById("cancel")
+  const overlay = document.getElementById("search-overlay")
+  const logo = document.getElementById("logo")
+  const accountAndCart = document.querySelector(
+    ".flex.gap-3.items-center.h-full"
+  ) // More reliable selector
 
   // Constants
   const navbarHeight = navbar.offsetHeight
@@ -138,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Close all dropdowns
   const closeAllDropdowns = () => {
+    // overlay.classList.add("hidden")
     filterTriggers.forEach((trigger) => {
       trigger.querySelector(".bottom-line")?.classList.add("hidden")
       //   trigger.classList.toggle("text-pink-300")
@@ -185,20 +95,49 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  const search = document.getElementById("search")
-  const overlay = document.getElementById("search-overlay")
-  const searchButton = document.getElementById("search-button")
-  const back = document.getElementById("back")
-  const logo = document.getElementById("logo")
+  //   const cancel = document.getElementById("cancel")
+  //   const overlay = document.getElementById("search-overlay")
+  //   const logo = document.getElementById("logo")
+  //   const accountAndCart = document.querySelector(
+  //     ".flex.gap-3.items-center.h-full"
+  //   ) // More reliable selector
 
   search.addEventListener("click", () => {
     console.log("clicked")
-    overlay.classList.toggle("hidden")
-    searchButton.classList.toggle("hidden")
-    back.classList.toggle("hidden")
-    logo.classList.toggle("hidden")
+    overlay.classList.remove("hidden")
+
+    // Only hide these elements on mobile (screen width less than 768px)
+    if (window.innerWidth < 768) {
+      cancel.classList.remove("hidden")
+      logo.classList.add("hidden")
+      accountAndCart.classList.add("hidden")
+    }
   })
 
+  cancel.addEventListener("click", () => {
+    overlay.classList.add("hidden")
+
+    // Only show these elements if they were hidden (mobile)
+    if (window.innerWidth < 768) {
+      cancel.classList.add("hidden")
+      logo.classList.remove("hidden")
+      accountAndCart.classList.remove("hidden")
+    }
+  })
+  document.addEventListener("click", (e) => {
+    // Only for desktop screens (768px and up)
+    if (window.innerWidth >= 768) {
+      // Check if click is outside the search input and overlay
+      if (!search.contains(e.target) && !overlay.contains(e.target)) {
+        overlay.classList.add("hidden")
+      }
+    }
+  })
+
+  // Prevent clicks inside the overlay from closing it
+  overlay.addEventListener("click", (e) => {
+    e.stopPropagation()
+  })
   document.addEventListener("click", closeAllDropdowns)
   window.addEventListener("scroll", handleStickyFilter)
 
