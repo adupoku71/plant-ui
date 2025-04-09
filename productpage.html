@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      .image-gallery {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .image-gallery::-webkit-scrollbar {
+        display: none;
+      }
+      /* Mobile navbar styles */
+      .mobile-navbar {
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .mobile-navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(12px);
+      }
+      /* Desktop navbar styles */
+      .desktop-navbar {
+        background-color: white;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .search-container {
+        transition: all 0.3s ease;
+      }
+      .search-input {
+        width: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .search-container.expanded {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+      .search-container.expanded .search-input {
+        width: 200px;
+        opacity: 1;
+      }
+      /* Desktop image sizing */
+      @media (min-width: 1024px) {
+        .product-image-container {
+          max-width: 90%;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Mobile Navbar (hidden on desktop) -->
+    <div
+      id="mobile-navbar"
+      class="mobile-navbar fixed top-0 z-[100] flex w-full items-center px-4 gap-3 border-b justify-between border-gray-300 md:px-24 h-14 md:gap-14 md:h-[70px]"
+    >
+      <!-- Logo on the left -->
+      <div class="flex items-center" id="logo">
+        <!-- Replace this text with your logo img tag when ready -->
+        <a href="ecommerce.html" class="font-bold text-black">SHOP</a>
+        <!-- Or use this for an actual logo image: -->
+        <!-- <img src="your-logo.png" alt="Company Logo" class="h-8 w-auto"> -->
+      </div>
+      <!-- back button  -->
+      <!-- Search Bar on the right -->
+      <div
+        class="md:min-w-[400px] lg:w-[500px] max-md:flex-1 bg-gray-50 flex md:h-10 py-1 md:border md:border-amber-400 md:py-0 rounded-full border-0 relative items-center md:bg-white pl-3"
+      >
+        <div class="search-icon">
+          <i class="ri-search-line top-1 text-sm left-3 text-gray-400"></i>
+        </div>
+        <div class="flex-1">
+          <input
+            id="search"
+            type="text"
+            placeholder="search here"
+            class="border-0 outline-none focus:outline-none focus:ring-0 focus:border-0 focus:bg-transparent bg-transparent appearance-none focus:appearance-none w-full max-md:text-sm pl-2"
+          />
+        </div>
+        <button
+          class="max-md:hidden h-full bg-amber-400 border-0 rounded-r-full px-4 text-lg font-bold text-white"
+        >
+          Search
+        </button>
+        <!-- Search Overlay -->
+        <div
+          id="search-overlay"
+          class="max-md:fixed max-md:bottom-0 max-md:h-[100vh] absolute max-md:left-0 bg-white w-full top-[39px] left-0 max-md:top-14 md:rounded-lg bottom-0 hidden"
+        >
+          <!-- Mobile: Fullscreen | Desktop: Dropdown under navbar -->
+          <div
+            class="md:max-w-2xl md:mx-auto bg-inherit w-full md:rounded-lg md:shadow-md"
+          >
+            <!-- Search Header -->
+
+            <!-- Search Content -->
+            <div class="p-4">
+              <!-- Recent Searches -->
+              <div class="mb-6">
+                <h3 class="text-sm font-semibold text-gray-700 mb-2">
+                  Recent Searches
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                    >Sneakers</span
+                  >
+                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                    >Handbags</span
+                  >
+                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                    >Watches</span
+                  >
+                </div>
+              </div>
+
+              <!-- Suggested Searches -->
+              <div>
+                <h3 class="text-sm font-semibold text-gray-700 mb-2">
+                  Suggested
+                </h3>
+                <ul class="space-y-2">
+                  <li class="flex items-center p-2 hover:bg-gray-50 rounded-md">
+                    <i class="material-icons text-gray-400 mr-2">search</i>
+                    <span>Men's running shoes</span>
+                  </li>
+                  <li class="flex items-center p-2 hover:bg-gray-50 rounded-md">
+                    <i class="material-icons text-gray-400 mr-2">search</i>
+                    <span>Women's handbags 2024</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- account and Cart  -->
+      <div id="account-and-cart" class="flex gap-3 items-center h-full">
+        <div class="hidden md:block">
+          <i class="ri-account-circle-fill text-3xl"></i>
+          <!-- <span class="material-icons">account_circle</span> -->
+        </div>
+
+        <a href="#" class="flex flex-col items-center text-gray-600 relative">
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span
+            class="absolute -top-1 -right-2 bg-pink-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
+            >4</span
+          >
+        </a>
+        <!-- </div> -->
+      </div>
+      <!-- search button -->
+
+      <div id="cancel" class="hidden">
+        <h1>Cancel</h1>
+      </div>
+    </div>
+
+    <!-- Desktop Navbar (hidden on mobile) -->
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto lg:px-8 lg:mt-[70px] lg:pt-0 pb-24">
+      <!-- Product Grid -->
+      <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start lg:py-12">
+        <!-- Image Gallery -->
+        <div class="lg:sticky top-0 lg:top-28 lg:px-4 px-0">
+          <!-- Increased top spacing -->
+          <div class="product-image-container">
+            <!-- Main Image -->
+            <div
+              class="aspect-square bg-gray-100 lg:rounded-lg overflow-hidden mb-4"
+            >
+              <img
+                id="main-image"
+                src="assets/img/bag.jpg"
+                alt="Product"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Thumbnails -->
+            <div
+              class="image-gallery flex gap-3 overflow-x-auto pb-4 mt-4 px-2"
+            >
+              <button
+                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
+                data-image="assets/img/bag.jpg"
+              >
+                <img
+                  src="assets/img/bag.jpg"
+                  alt="Thumbnail 1"
+                  class="w-full h-full object-cover"
+                />
+              </button>
+              <button
+                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
+                data-image="assets/img/bag_2.jpg"
+              >
+                <img
+                  src="assets/img/bag_2.jpg"
+                  alt="Thumbnail 2"
+                  class="w-full h-full object-cover"
+                />
+              </button>
+              <button
+                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
+                data-image="assets/img/bag.jpg"
+              >
+                <img
+                  src="assets/img/bag.jpg"
+                  alt="Thumbnail 3"
+                  class="w-full h-full object-cover"
+                />
+              </button>
+              <button
+                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
+                data-image="assets/img/bag_2.jpg"
+              >
+                <img
+                  src="assets/img/bag_2.jpg"
+                  alt="Thumbnail 4"
+                  class="w-full h-full object-cover"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="px-2 lg:p-0 lg:pl-4">
+          <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+            Premium Leather Handbag
+          </h1>
+
+          <div class="mb-3">
+            <span class="text-2xl font-bold text-gray-900">$149.99</span>
+            <span class="text-gray-500 line-through ml-2">$199.99</span>
+            <span
+              class="bg-pink-100 text-pink-800 text-xs font-medium ml-2 px-2 py-0.5 rounded"
+              >25% OFF</span
+            >
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-sm font-medium text-gray-900 mb-2">Quantity</h3>
+            <div class="flex items-center border rounded-md w-fit">
+              <button
+                class="px-3 py-2 text-gray-600 hover:bg-gray-100 quantity-minus"
+              >
+                -
+              </button>
+              <span class="px-4 py-2 border-x quantity-display">1</span>
+              <button
+                class="px-3 py-2 text-gray-600 hover:bg-gray-100 quantity-plus"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <div class="hidden lg:flex gap-4 mb-8">
+            <button
+              class="flex-1 bg-gray-900 text-white py-3 px-6 rounded-md font-medium hover:bg-gray-800 transition"
+            >
+              Add to Cart
+            </button>
+            <button
+              class="flex-1 border border-gray-300 py-3 px-6 rounded-md font-medium hover:bg-gray-50 transition"
+            >
+              <i class="ri-heart-line mr-2"></i> Wishlist
+            </button>
+          </div>
+
+          <!-- Product Details -->
+          <div class="border-t border-gray-200 pt-4 mb-4">
+            <h3 class="text-lg font-medium text-gray-900 mb-1">Description</h3>
+            <p class="text-gray-600 max-md:text-sm md:text-lg">
+              This premium leather handbag features a spacious interior with
+              multiple compartments, high-quality stitching, and a durable
+              zipper. Perfect for everyday use while maintaining a stylish
+              appearance. The adjustable strap allows for comfortable shoulder
+              or crossbody wear.
+            </p>
+          </div>
+
+          <div class="border-t border-gray-200 pt-6">
+            <h3 class="text-lg font-medium text-gray-900 mb-3">
+              Shipping & Returns
+            </h3>
+            <p class="text-gray-600 mb-2">
+              <i class="ri-truck-line mr-2"></i> Free shipping on orders over
+              $50
+            </p>
+            <p class="text-gray-600">
+              <i class="ri-arrow-go-back-line mr-2"></i> Easy 30-day returns
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Add-to-Cart Sticky Bar -->
+    <div
+      class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg"
+    >
+      <div class="flex gap-4">
+        <button
+          class="w-12 h-12 flex items-center justify-center border rounded-md hover:bg-gray-50"
+        >
+          <i class="ri-heart-3-line text-xl"></i>
+        </button>
+        <button
+          class="flex-1 bg-gray-900 text-white py-3 px-6 rounded-md font-medium hover:bg-gray-800 transition"
+        >
+          Add to Cart - $149.99
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Mobile Navbar scroll effect
+      const mobileNavbar = document.getElementById("mobile-navbar")
+      if (mobileNavbar) {
+        window.addEventListener("scroll", () => {
+          const scrollPosition = window.scrollY
+          const opacity = Math.min(0.2 + scrollPosition / 150, 0.9)
+          const blur = Math.min(8 + scrollPosition / 20, 12)
+
+          mobileNavbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`
+          mobileNavbar.style.backdropFilter = `blur(${blur}px)`
+
+          if (scrollPosition > 50) {
+            mobileNavbar.classList.add("scrolled")
+          } else {
+            mobileNavbar.classList.remove("scrolled")
+          }
+        })
+      }
+
+      // Mobile Search functionality
+
+      const search = document.getElementById("search")
+      const overlay = document.getElementById("search-overlay")
+      const accountAndCart = document.getElementById("account-and-cart")
+      search.addEventListener("click", () => {
+        console.log("clicked")
+        overlay.classList.remove("hidden")
+
+        // Only hide these elements on mobile (screen width less than 768px)
+        if (window.innerWidth < 768) {
+          cancel.classList.remove("hidden")
+          logo.classList.add("hidden")
+          accountAndCart.classList.add("hidden")
+        }
+      })
+
+      cancel.addEventListener("click", () => {
+        overlay.classList.add("hidden")
+
+        // Only show these elements if they were hidden (mobile)
+        if (window.innerWidth < 768) {
+          cancel.classList.add("hidden")
+          logo.classList.remove("hidden")
+          accountAndCart.classList.remove("hidden")
+        }
+      })
+      document.addEventListener("click", (e) => {
+        // Only for desktop screens (768px and up)
+        if (window.innerWidth >= 768) {
+          // Check if click is outside the search input and overlay
+          if (!search.contains(e.target) && !overlay.contains(e.target)) {
+            overlay.classList.add("hidden")
+          }
+        }
+      })
+
+      // Prevent clicks inside the overlay from closing it
+      overlay.addEventListener("click", (e) => {
+        e.stopPropagation()
+      })
+
+      // Close search when clicking outside
+      //   document.addEventListener("click", (e) => {
+      //     if (!searchContainer.contains(e.target)) {
+      //       searchContainer.classList.remove("expanded")
+      //       backButton.classList.add("hidden")
+      //     }
+      //   })
+
+      // Image gallery functionality
+      const mainImage = document.getElementById("main-image")
+      document.querySelectorAll(".thumbnail-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (mainImage) mainImage.src = btn.dataset.image
+
+          document.querySelectorAll(".thumbnail-btn").forEach((b) => {
+            b.classList.remove("border-amber-400")
+            b.classList.add("border-transparent")
+          })
+          btn.classList.add("border-amber-400")
+          btn.classList.remove("border-transparent")
+        })
+      })
+
+      // Quantity selector
+      const quantityDisplay = document.querySelector(".quantity-display")
+      const minusBtn = document.querySelector(".quantity-minus")
+      const plusBtn = document.querySelector(".quantity-plus")
+
+      let quantity = 1
+
+      if (minusBtn) {
+        minusBtn.addEventListener("click", () => {
+          if (quantity > 1) {
+            quantity--
+            quantityDisplay.textContent = quantity
+          }
+        })
+      }
+
+      if (plusBtn) {
+        plusBtn.addEventListener("click", () => {
+          quantity++
+          quantityDisplay.textContent = quantity
+        })
+      }
+    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </body>
+</html>
