@@ -31,8 +31,8 @@
       }
       /* Mobile navbar styles */
       .mobile-navbar {
-        background-color: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(8px);
+        /* background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px); */
         transition: all 0.3s ease;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
@@ -73,124 +73,134 @@
     <!-- Mobile Navbar (hidden on desktop) -->
     <div
       id="mobile-navbar"
-      class="mobile-navbar fixed top-0 z-[100] flex w-full items-center px-4 gap-3 border-b justify-between border-gray-300 md:px-24 h-14 md:gap-14 md:h-[70px]"
+      class="mobile-navbar fixed top-0 z-[100] w-full md:bg-white"
     >
-      <!-- Logo on the left -->
-      <div class="flex items-center" id="logo">
-        <!-- Replace this text with your logo img tag when ready -->
-        <a href="ecommerce.html" class="font-bold text-black">SHOP</a>
-        <!-- Or use this for an actual logo image: -->
-        <!-- <img src="your-logo.png" alt="Company Logo" class="h-8 w-auto"> -->
-      </div>
-      <!-- back button  -->
-      <!-- Search Bar on the right -->
       <div
-        class="md:min-w-[400px] lg:w-[500px] max-md:flex-1 bg-gray-50 flex md:h-10 py-1 md:border md:border-amber-400 md:py-0 rounded-full border-0 relative items-center md:bg-white pl-3"
+        class="flex items-center px-4 gap-3 border-b justify-between md:px-24 h-14 md:gap-14 md:h-[70px] bg-transparent md:bg-white lg:px-32 max-w-7xl mx-auto"
       >
-        <div class="search-icon">
-          <i class="ri-search-line top-1 text-sm left-3 text-gray-400"></i>
+        <!-- Logo on the left -->
+        <div class="flex items-center" id="logo">
+          <!-- Replace this text with your logo img tag when ready -->
+          <a href="ecommerce.html" class="font-bold text-black">SHOP</a>
+          <!-- Or use this for an actual logo image: -->
+          <!-- <img src="your-logo.png" alt="Company Logo" class="h-8 w-auto"> -->
         </div>
-        <div class="flex-1">
-          <input
-            id="search"
-            type="text"
-            placeholder="search here"
-            class="border-0 outline-none focus:outline-none focus:ring-0 focus:border-0 focus:bg-transparent bg-transparent appearance-none focus:appearance-none w-full max-md:text-sm pl-2"
-          />
-        </div>
-        <button
-          class="max-md:hidden h-full bg-amber-400 border-0 rounded-r-full px-4 text-lg font-bold text-white"
-        >
-          Search
-        </button>
-        <!-- Search Overlay -->
+        <!-- back button  -->
+        <!-- Search Bar on the right -->
         <div
-          id="search-overlay"
-          class="max-md:fixed max-md:bottom-0 max-md:h-[100vh] absolute max-md:left-0 bg-white w-full top-[39px] left-0 max-md:top-14 md:rounded-lg bottom-0 hidden"
+          class="md:min-w-[400px] lg:w-[500px] max-md:flex-1 flex md:h-10 py-1 md:border md:border-amber-400 md:py-0 rounded-full border relative items-center md:bg-white pl-3"
         >
-          <!-- Mobile: Fullscreen | Desktop: Dropdown under navbar -->
-          <div
-            class="md:max-w-2xl md:mx-auto bg-inherit w-full md:rounded-lg md:shadow-md"
+          <div class="search-icon">
+            <i class="ri-search-line top-1 text-sm left-3 text-gray-400"></i>
+          </div>
+          <div class="flex-1">
+            <input
+              id="search"
+              type="text"
+              placeholder="search here"
+              class="border-0 outline-none focus:outline-none focus:ring-0 focus:border-0 focus:bg-transparent bg-transparent appearance-none focus:appearance-none w-full max-md:text-sm pl-2"
+            />
+          </div>
+          <button
+            class="max-md:hidden h-full bg-amber-400 border-0 rounded-r-full px-4 text-lg font-bold text-white"
           >
-            <!-- Search Header -->
+            Search
+          </button>
+          <!-- Search Overlay -->
+          <div
+            id="search-overlay"
+            class="max-md:fixed max-md:bottom-0 max-md:h-[100vh] absolute max-md:left-0 bg-white w-full top-[39px] left-0 max-md:top-14 md:rounded-lg bottom-0 hidden"
+          >
+            <!-- Mobile: Fullscreen | Desktop: Dropdown under navbar -->
+            <div
+              class="md:max-w-2xl md:mx-auto bg-inherit w-full md:rounded-lg md:shadow-md"
+            >
+              <!-- Search Header -->
 
-            <!-- Search Content -->
-            <div class="p-4">
-              <!-- Recent Searches -->
-              <div class="mb-6">
-                <h3 class="text-sm font-semibold text-gray-700 mb-2">
-                  Recent Searches
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
-                    >Sneakers</span
-                  >
-                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
-                    >Handbags</span
-                  >
-                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
-                    >Watches</span
-                  >
+              <!-- Search Content -->
+              <div class="p-4">
+                <!-- Recent Searches -->
+                <div class="mb-6">
+                  <h3 class="text-sm font-semibold text-gray-700 mb-2">
+                    Recent Searches
+                  </h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                      >Sneakers</span
+                    >
+                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                      >Handbags</span
+                    >
+                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                      >Watches</span
+                    >
+                  </div>
                 </div>
-              </div>
 
-              <!-- Suggested Searches -->
-              <div>
-                <h3 class="text-sm font-semibold text-gray-700 mb-2">
-                  Suggested
-                </h3>
-                <ul class="space-y-2">
-                  <li class="flex items-center p-2 hover:bg-gray-50 rounded-md">
-                    <i class="material-icons text-gray-400 mr-2">search</i>
-                    <span>Men's running shoes</span>
-                  </li>
-                  <li class="flex items-center p-2 hover:bg-gray-50 rounded-md">
-                    <i class="material-icons text-gray-400 mr-2">search</i>
-                    <span>Women's handbags 2024</span>
-                  </li>
-                </ul>
+                <!-- Suggested Searches -->
+                <div>
+                  <h3 class="text-sm font-semibold text-gray-700 mb-2">
+                    Suggested
+                  </h3>
+                  <ul class="space-y-2">
+                    <li
+                      class="flex items-center p-2 hover:bg-gray-50 rounded-md"
+                    >
+                      <i class="material-icons text-gray-400 mr-2">search</i>
+                      <span>Men's running shoes</span>
+                    </li>
+                    <li
+                      class="flex items-center p-2 hover:bg-gray-50 rounded-md"
+                    >
+                      <i class="material-icons text-gray-400 mr-2">search</i>
+                      <span>Women's handbags 2024</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- account and Cart  -->
-      <div id="account-and-cart" class="flex gap-3 items-center h-full">
-        <div class="hidden md:block">
-          <i class="ri-account-circle-fill text-3xl"></i>
-          <!-- <span class="material-icons">account_circle</span> -->
+        <!-- account and Cart  -->
+        <div id="account-and-cart" class="flex gap-3 items-center h-full">
+          <div class="hidden md:block">
+            <i class="ri-account-circle-fill text-3xl"></i>
+            <!-- <span class="material-icons">account_circle</span> -->
+          </div>
+
+          <a href="#" class="flex flex-col items-center text-gray-600 relative">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span
+              class="absolute -top-1 -right-2 bg-pink-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
+              >4</span
+            >
+          </a>
+          <!-- </div> -->
         </div>
+        <!-- search button -->
 
-        <a href="#" class="flex flex-col items-center text-gray-600 relative">
-          <span class="material-symbols-outlined">shopping_cart</span>
-          <span
-            class="absolute -top-1 -right-2 bg-pink-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
-            >4</span
-          >
-        </a>
-        <!-- </div> -->
-      </div>
-      <!-- search button -->
-
-      <div id="cancel" class="hidden">
-        <h1>Cancel</h1>
+        <div id="cancel" class="hidden">
+          <h1>Cancel</h1>
+        </div>
       </div>
     </div>
 
     <!-- Desktop Navbar (hidden on mobile) -->
 
     <!-- Main Content -->
-    <div class="max-w-7xl mx-auto lg:px-8 lg:mt-[70px] lg:pt-0 pb-24">
+    <div class="max-w-7xl mx-auto lg:mt-[70px] lg:pt-0 pb-24 md:px-6 lg:px-24">
       <!-- Product Grid -->
-      <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start lg:py-12">
+      <div
+        class="md:grid md:grid-cols-2 lg:gap-12 md:gap-8 md:items-start md:py-24 lg:py-8"
+      >
         <!-- Image Gallery -->
-        <div class="lg:sticky top-0 lg:top-28 lg:px-4 px-0">
+        <div class="px-0">
           <!-- Increased top spacing -->
           <div class="product-image-container">
             <!-- Main Image -->
             <div
-              class="aspect-square bg-gray-100 lg:rounded-lg overflow-hidden mb-4"
+              class="aspect-square bg-gray-100 md:rounded-lg overflow-hidden mb-4"
             >
               <img
                 id="main-image"
@@ -226,20 +236,20 @@
               </button>
               <button
                 class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
-                data-image="assets/img/bag.jpg"
+                data-image="assets/img/bag_3.jpg"
               >
                 <img
-                  src="assets/img/bag.jpg"
+                  src="assets/img/bag_3.jpg"
                   alt="Thumbnail 3"
                   class="w-full h-full object-cover"
                 />
               </button>
               <button
                 class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
-                data-image="assets/img/bag_2.jpg"
+                data-image="assets/img/bag_5.jpg"
               >
                 <img
-                  src="assets/img/bag_2.jpg"
+                  src="assets/img/bag_5.jpg"
                   alt="Thumbnail 4"
                   class="w-full h-full object-cover"
                 />
@@ -341,34 +351,104 @@
 
     <script>
       // Mobile Navbar scroll effect
-      const mobileNavbar = document.getElementById("mobile-navbar")
-      if (mobileNavbar) {
-        window.addEventListener("scroll", () => {
-          const scrollPosition = window.scrollY
-          const opacity = Math.min(0.2 + scrollPosition / 150, 0.9)
-          const blur = Math.min(8 + scrollPosition / 20, 12)
-
-          mobileNavbar.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`
-          mobileNavbar.style.backdropFilter = `blur(${blur}px)`
-
-          if (scrollPosition > 50) {
-            mobileNavbar.classList.add("scrolled")
-          } else {
-            mobileNavbar.classList.remove("scrolled")
-          }
-        })
-      }
-
-      // Mobile Search functionality
-
-      const search = document.getElementById("search")
       const overlay = document.getElementById("search-overlay")
+      const mobileNavbar = document.getElementById("mobile-navbar")
+      const navbarChildren = mobileNavbar.querySelectorAll("*")
+      const search = document.getElementById("search")
       const accountAndCart = document.getElementById("account-and-cart")
+      if (window.innerWidth < 768) {
+        if (mobileNavbar) {
+          // Get all child elements that should also fade
+
+          // Minimum opacity for children (20% visibility at top)
+          const minChildOpacity = 0.5
+
+          window.addEventListener("scroll", () => {
+            const scrollPosition = window.scrollY
+
+            // Calculate opacity (minChildOpacity at top, increasing as you scroll)
+            let opacity = Math.min(minChildOpacity + scrollPosition / 200, 0.9)
+            let blur = Math.min(8 + scrollPosition / 20, 12)
+
+            // Navbar background is completely transparent at top
+            const bgOpacity = scrollPosition > 0 ? opacity : 0
+
+            mobileNavbar.style.backgroundColor = `rgba(255, 255, 255, ${bgOpacity})`
+            //   mobileNavbar.style.backdropFilter = `blur(${blur}px)`
+
+            // Apply opacity to children elements (always at least minChildOpacity visible)
+            const childOpacity = Math.max(opacity, minChildOpacity)
+            navbarChildren.forEach((child) => {
+              child.style.opacity = childOpacity
+              child.style.transition = "opacity 0.2s ease" // Smooth transition
+            })
+
+            if (scrollPosition > 50) {
+              mobileNavbar.classList.add("scrolled")
+            } else {
+              mobileNavbar.classList.remove("scrolled")
+            }
+          })
+
+          // Initialize with transparent state if at top
+          if (window.scrollY === 0) {
+            mobileNavbar.style.backgroundColor = "rgba(255, 255, 255, 0)"
+            mobileNavbar.style.backdropFilter = "blur(0px)"
+            navbarChildren.forEach((child) => {
+              child.style.opacity = minChildOpacity
+            })
+          }
+        }
+        // Mobile Search functionality
+
+        //   search.addEventListener("click", () => {
+        //     console.log("clicked")
+        //     overlay.classList.remove("hidden")
+
+        //     // Only hide these elements on mobile (screen width less than 768px)
+        //     if (window.innerWidth < 768) {
+        //       cancel.classList.remove("hidden")
+        //       logo.classList.add("hidden")
+        //       accountAndCart.classList.add("hidden")
+        //     }
+        //   })
+
+        //   cancel.addEventListener("click", () => {
+        //     overlay.classList.add("hidden")
+
+        //     // Only show these elements if they were hidden (mobile)
+        //     if (window.innerWidth < 768) {
+        //       cancel.classList.add("hidden")
+        //       logo.classList.remove("hidden")
+        //       accountAndCart.classList.remove("hidden")
+        //     }
+        //   })
+        // Store the original opacity values
+      }
+      let originalNavbarOpacity = null
+      let originalChildrenOpacity = {}
+
       search.addEventListener("click", () => {
         console.log("clicked")
         overlay.classList.remove("hidden")
+        const navbarChildren = mobileNavbar.querySelectorAll("*")
 
-        // Only hide these elements on mobile (screen width less than 768px)
+        // Save current opacity values before changing them
+        originalNavbarOpacity = mobileNavbar.style.backgroundColor
+        navbarChildren.forEach((child) => {
+          originalChildrenOpacity[child.id || child.className] =
+            child.style.opacity
+        })
+
+        // Force full opacity on navbar and children
+        mobileNavbar.style.backgroundColor = "rgba(255, 255, 255, 1)"
+        mobileNavbar.style.backdropFilter = "none"
+        navbarChildren.forEach((child) => {
+          child.style.opacity = "1"
+          child.style.transition = "opacity 0.2s ease"
+        })
+
+        // Your existing mobile hide logic
         if (window.innerWidth < 768) {
           cancel.classList.remove("hidden")
           logo.classList.add("hidden")
@@ -376,14 +456,41 @@
         }
       })
 
-      cancel.addEventListener("click", () => {
-        overlay.classList.add("hidden")
+      // Function to restore original opacity
+      function restoreOriginalOpacity() {
+        if (originalNavbarOpacity !== null) {
+          mobileNavbar.style.backgroundColor = originalNavbarOpacity
+          navbarChildren.forEach((child) => {
+            const key = child.id || child.className
+            child.style.opacity = originalChildrenOpacity[key] || ""
+          })
+        }
+      }
 
-        // Only show these elements if they were hidden (mobile)
-        if (window.innerWidth < 768) {
-          cancel.classList.add("hidden")
-          logo.classList.remove("hidden")
-          accountAndCart.classList.remove("hidden")
+      // Restore when closing search
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          overlay.classList.add("hidden")
+          restoreOriginalOpacity()
+        }
+      })
+
+      if (cancel) {
+        cancel.addEventListener("click", () => {
+          overlay.classList.add("hidden")
+          restoreOriginalOpacity()
+          if (window.innerWidth < 768) {
+            cancel.classList.add("hidden")
+            logo.classList.remove("hidden")
+            accountAndCart.classList.remove("hidden")
+          }
+        })
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !overlay.classList.contains("hidden")) {
+          overlay.classList.add("hidden")
+          restoreOriginalOpacity()
         }
       })
       document.addEventListener("click", (e) => {
