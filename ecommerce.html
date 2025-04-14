@@ -25,108 +25,116 @@
 
     <div
       id="mobile-nav"
-      class="mobile-nav fixed top-0 z-[100] flex bg-white w-full items-center px-4 gap-3 border-b justify-between border-gray-300 md:px-24 h-14 md:gap-14 md:h-[70px]"
+      class="mobile-nav fixed top-0 z-[100] bg-white w-full border-gray-300 h-14 md:h-[70px]"
     >
-      <!-- Logo on the left -->
-      <div class="flex items-center" id="logo">
-        <!-- Replace this text with your logo img tag when ready -->
-        <span class="font-bold text-black">SHOP</span>
-        <!-- Or use this for an actual logo image: -->
-        <!-- <img src="your-logo.png" alt="Company Logo" class="h-8 w-auto"> -->
-      </div>
-      <!-- back button  -->
-      <!-- Search Bar on the right -->
       <div
-        class="md:min-w-[400px] lg:w-[500px] max-md:flex-1 bg-gray-50 flex md:h-10 py-1 md:border md:border-amber-400 md:py-0 rounded-full border-0 relative items-center md:bg-white pl-3"
+        class="max-w-7xl flex h-full items-center gap-3 border-b justify-between mx-auto px-4 md:px-8 lg:px-24"
       >
-        <div class="search-icon">
-          <i class="ri-search-line top-1 text-sm left-3 text-gray-400"></i>
+        <!-- Logo on the left -->
+        <div class="flex items-center" id="logo">
+          <!-- Replace this text with your logo img tag when ready -->
+          <span class="font-bold text-black">SHOP</span>
+          <!-- Or use this for an actual logo image: -->
+          <!-- <img src="your-logo.png" alt="Company Logo" class="h-8 w-auto"> -->
         </div>
-        <div class="flex-1">
-          <input
-            id="search"
-            type="text"
-            placeholder="search here"
-            class="border-0 outline-none focus:outline-none focus:ring-0 focus:border-0 focus:bg-transparent bg-transparent appearance-none focus:appearance-none w-full max-md:text-sm pl-2"
-          />
-        </div>
-        <button
-          class="max-md:hidden h-full bg-amber-400 border-0 rounded-r-full px-4 text-lg font-bold text-white"
-        >
-          Search
-        </button>
-        <!-- Search Overlay -->
+        <!-- back button  -->
+        <!-- Search Bar on the right -->
         <div
-          id="search-overlay"
-          class="max-md:fixed max-md:bottom-0 max-md:left-0 bg-white absolute w-full top-[39px] left-0 max-md:top-14 md:rounded-lg hidden"
+          class="md:min-w-[400px] lg:w-[500px] max-md:flex-1 bg-gray-50 flex md:h-10 py-1 md:border md:border-amber-400 md:py-0 rounded-full border-0 relative items-center md:bg-white pl-3"
         >
-          <!-- Mobile: Fullscreen | Desktop: Dropdown under navbar -->
-          <div
-            class="md:max-w-2xl md:mx-auto bg-inherit w-full md:rounded-lg md:shadow-md"
+          <div class="search-icon">
+            <i class="ri-search-line top-1 text-sm left-3 text-gray-400"></i>
+          </div>
+          <div class="flex-1">
+            <input
+              id="search"
+              type="text"
+              placeholder="search here"
+              class="border-0 outline-none focus:outline-none focus:ring-0 focus:border-0 focus:bg-transparent bg-transparent appearance-none focus:appearance-none w-full max-md:text-sm pl-2"
+            />
+          </div>
+          <button
+            class="max-md:hidden h-full bg-amber-400 border-0 rounded-r-full px-4 text-lg font-bold text-white"
           >
-            <!-- Search Header -->
+            Search
+          </button>
+          <!-- Search Overlay -->
+          <div
+            id="search-overlay"
+            class="max-md:fixed max-md:bottom-0 max-md:left-0 bg-white absolute w-full top-[39px] left-0 max-md:top-14 md:rounded-lg hidden"
+          >
+            <!-- Mobile: Fullscreen | Desktop: Dropdown under navbar -->
+            <div
+              class="md:max-w-2xl md:mx-auto bg-inherit w-full md:rounded-lg md:shadow-md"
+            >
+              <!-- Search Header -->
 
-            <!-- Search Content -->
-            <div class="p-4">
-              <!-- Recent Searches -->
-              <div class="mb-6">
-                <h3 class="text-sm font-semibold text-gray-700 mb-2">
-                  Recent Searches
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
-                    >Sneakers</span
-                  >
-                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
-                    >Handbags</span
-                  >
-                  <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
-                    >Watches</span
-                  >
+              <!-- Search Content -->
+              <div class="p-4">
+                <!-- Recent Searches -->
+                <div class="mb-6">
+                  <h3 class="text-sm font-semibold text-gray-700 mb-2">
+                    Recent Searches
+                  </h3>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                      >Sneakers</span
+                    >
+                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                      >Handbags</span
+                    >
+                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+                      >Watches</span
+                    >
+                  </div>
                 </div>
-              </div>
 
-              <!-- Suggested Searches -->
-              <div>
-                <h3 class="text-sm font-semibold text-gray-700 mb-2">
-                  Suggested
-                </h3>
-                <ul class="space-y-2">
-                  <li class="flex items-center p-2 hover:bg-gray-50 rounded-md">
-                    <i class="material-icons text-gray-400 mr-2">search</i>
-                    <span>Men's running shoes</span>
-                  </li>
-                  <li class="flex items-center p-2 hover:bg-gray-50 rounded-md">
-                    <i class="material-icons text-gray-400 mr-2">search</i>
-                    <span>Women's handbags 2024</span>
-                  </li>
-                </ul>
+                <!-- Suggested Searches -->
+                <div>
+                  <h3 class="text-sm font-semibold text-gray-700 mb-2">
+                    Suggested
+                  </h3>
+                  <ul class="space-y-2">
+                    <li
+                      class="flex items-center p-2 hover:bg-gray-50 rounded-md"
+                    >
+                      <i class="material-icons text-gray-400 mr-2">search</i>
+                      <span>Men's running shoes</span>
+                    </li>
+                    <li
+                      class="flex items-center p-2 hover:bg-gray-50 rounded-md"
+                    >
+                      <i class="material-icons text-gray-400 mr-2">search</i>
+                      <span>Women's handbags 2024</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- account and Cart  -->
-      <div id="account-and-cart" class="flex gap-3 items-center h-full">
-        <div class="hidden md:block">
-          <i class="ri-account-circle-fill text-3xl"></i>
-          <!-- <span class="material-icons">account_circle</span> -->
+        <!-- account and Cart  -->
+        <div id="account-and-cart" class="flex gap-3 items-center h-full">
+          <div class="hidden md:block">
+            <i class="ri-account-circle-fill text-3xl"></i>
+            <!-- <span class="material-icons">account_circle</span> -->
+          </div>
+
+          <a href="#" class="flex flex-col items-center text-gray-600 relative">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span
+              class="absolute -top-1 -right-2 bg-pink-300 md:bg-amber-400 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
+              >4</span
+            >
+          </a>
+          <!-- </div> -->
         </div>
+        <!-- search button -->
 
-        <a href="#" class="flex flex-col items-center text-gray-600 relative">
-          <span class="material-symbols-outlined">shopping_cart</span>
-          <span
-            class="absolute -top-1 -right-2 bg-pink-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
-            >4</span
-          >
-        </a>
-        <!-- </div> -->
-      </div>
-      <!-- search button -->
-
-      <div id="cancel" class="hidden">
-        <h1>Cancel</h1>
+        <div id="cancel" class="hidden">
+          <h1>Cancel</h1>
+        </div>
       </div>
     </div>
 
@@ -160,30 +168,93 @@
         </a>
       </div>
     </div>
-    <div class="bg-amber-300 h-64 mt-[70px] hidden md:block">hlkhla</div>
+    <!-- desktop banner  -->
+    <div class="relative mt-[70px] hidden md:block h-[500px] overflow-hidden">
+      <!-- Background image with dark overlay -->
+      <div class="absolute inset-0">
+        <img
+          src="assets/img/bag.jpg"
+          alt="Premium Handbag"
+          class="w-full h-full object-cover object-left"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-gray-900/40 to-transparent"
+        ></div>
+      </div>
 
+      <!-- Content container -->
+      <div class="relative max-w-7xl mx-auto h-full px-8">
+        <div class="h-full flex items-center">
+          <!-- Right-aligned content -->
+          <div class="mx-auto w-full max-w-xl text-white space-y-6">
+            <span
+              class="inline-block px-3 py-1 bg-amber-400 text-gray-900 text-sm font-medium rounded-full"
+              >NEW COLLECTION</span
+            >
+            <h2 class="text-4xl font-bold">Elevate Your Style</h2>
+            <p class="text-lg">
+              Discover our premium collection of handbags crafted with the
+              finest materials and timeless designs.
+            </p>
+
+            <div class="flex space-x-4 pt-4">
+              <button
+                class="px-6 py-3 bg-amber-400 text-gray-900 rounded-full font-medium hover:bg-amber-300 transition duration-300 flex items-center"
+              >
+                <i class="ri-shopping-bag-line mr-2"></i> Shop Now
+              </button>
+              <button
+                class="px-6 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-gray-900 transition duration-300 flex items-center"
+              >
+                <i class="ri-smartphone-line mr-2"></i> Get the App
+              </button>
+            </div>
+
+            <div class="flex items-center pt-8 space-x-2">
+              <div class="flex -space-x-2">
+                <img
+                  class="w-10 h-10 rounded-full border-2 border-amber-400"
+                  src="https://randomuser.me/api/portraits/women/1.jpg"
+                  alt=""
+                />
+                <img
+                  class="w-10 h-10 rounded-full border-2 border-amber-400"
+                  src="https://randomuser.me/api/portraits/women/2.jpg"
+                  alt=""
+                />
+                <img
+                  class="w-10 h-10 rounded-full border-2 border-amber-400"
+                  src="https://randomuser.me/api/portraits/women/3.jpg"
+                  alt=""
+                />
+              </div>
+              <span class="text-sm">Join 10,000+ happy customers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Desktop Layout (hidden on mobile) -->
 
-    <!-- Desktop Content -->
-    <!-- <div class="bg-amber-300 hidden lg:block p-4 mt-16">
-      <p class="text-gray-500 text-center">Desktop content will appear here</p>
-    </div> -->
+    <!-- FIlter -->
     <div
       id="filter-section"
       class="w-full text-sm filter-section transition-all duration-300 ease-in-out mt-24 md:mt-8 sticky z-[60]"
     >
-      <div class="w-full items-center lg:max-w-7xl lg:mx-auto z-50">
+      <div class="w-full items-center max-w-7xl mx-auto z-50">
         <div
-          class="flex sm:justify-end justify-between pt-1 sm:gap-6 px-6 md:justify-start"
+          class="flex sm:justify-end justify-between pt-1 sm:gap-6 px-4 md:px-8 lg:px-24 md:justify-start"
         >
           <div class="relative pb-2">
             <button
               id="all"
-              class="cursor-pointer h-full tracking-widest font-medium text-pink-300 pt-1"
+              class="cursor-pointer h-full tracking-widest font-medium text-pink-300 pt-1 lg:text-amber-400"
             >
               ALL
               <!-- <i class="ri-arrow-down-s-line text-lg invisible"></i> -->
-              <div class="absolute bottom-0 w-full bg-pink-300 h-0.5"></div>
+              <div
+                class="absolute bottom-0 w-full bg-pink-300 lg:bg-amber-400 h-0.5"
+              ></div>
             </button>
           </div>
           <div class="relative pb-2">
@@ -262,19 +333,11 @@
     </div>
     <!-- Products  -->
     <section
-      class="max-w-6xl md:mt-0 pt-1 mx-auto pb-20 px-0 md:px-3 lg:pb-12 z-40"
+      class="max-w-7xl md:mt-0 pt-1 mx-auto pb-20 lg:pb-12 z-40 px-0 md:px-8 lg:px-24 sm:px-2"
     >
-      <!-- <h2
-        class="cursor-pointer text-center text-lg font-bold text-gray-900 mb-2"
-      >
-      Take Your Pick
-    </h2> -->
-      <!-- Filter section  -->
-
-      <!-- <h2 class="text-xl font-bold text-gray-900 mb-6">Featured Products</h2> -->
       <div class="px- mt-2 md:px-0">
         <div
-          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1.5"
+          class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-1.5"
         >
           <!-- Product info -->
 
@@ -300,7 +363,9 @@
                   </h3>
                   <p class="text-gray-600 text-sm mt-1">$49.99</p>
                 </div>
-                <button class="text-blue-600 hover:text-blue-800">
+                <button
+                  class="text-pink-300 hover:text-pink-400 lg:text-amber-400 lg:hover:text-amber-300"
+                >
                   <i class="ri-heart-add-2-line text-lg"></i>
                 </button>
               </div>
@@ -325,7 +390,9 @@
                   </h3>
                   <p class="text-gray-600 text-sm mt-1">$49.99</p>
                 </div>
-                <button class="text-blue-600 hover:text-blue-800">
+                <button
+                  class="text-pink-300 hover:text-pink-400 lg:text-amber-400 lg:hover:text-amber-300"
+                >
                   <i class="ri-heart-add-2-line text-lg"></i>
                 </button>
               </div>
@@ -350,7 +417,9 @@
                   </h3>
                   <p class="text-gray-600 text-sm mt-1">$49.99</p>
                 </div>
-                <button class="text-blue-600 hover:text-blue-800">
+                <button
+                  class="text-pink-300 hover:text-pink-400 lg:text-amber-400 lg:hover:text-amber-300"
+                >
                   <i class="ri-heart-add-2-line text-lg"></i>
                 </button>
               </div>
@@ -375,38 +444,14 @@
                   </h3>
                   <p class="text-gray-600 text-sm mt-1">$49.99</p>
                 </div>
-                <button class="text-blue-600 hover:text-blue-800">
+                <button
+                  class="text-pink-300 hover:text-pink-400 lg:text-amber-400 lg:hover:text-amber-300"
+                >
                   <i class="ri-heart-add-2-line text-lg"></i>
                 </button>
               </div>
             </div>
           </div>
-          <div class="bg-white shadow-md overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_5.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
           <a
             href="productpage.html"
             class="bg-white bag shadow-md cursor-pointer overflow-hidden relative"
@@ -429,7 +474,9 @@
                   </h3>
                   <p class="text-gray-600 text-sm mt-1">$49.99</p>
                 </div>
-                <button class="text-blue-600 hover:text-blue-800">
+                <button
+                  class="text-pink-300 hover:text-pink-400 lg:text-amber-400 lg:hover:text-amber-300"
+                >
                   <i class="ri-heart-add-2-line text-lg"></i>
                 </button>
               </div>
@@ -454,340 +501,9 @@
                   </h3>
                   <p class="text-gray-600 text-sm mt-1">$49.99</p>
                 </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white shadow-md bag overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_3.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white shadow-md overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_4.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white shadow-md overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_5.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <a
-            href="productpage.html"
-            class="bg-white bag shadow-md cursor-pointer overflow-hidden relative"
-          >
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Prada Lorem ipsu
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </a>
-          <div class="bg-white shadow-md bag overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_2.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white shadow-md bag overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_3.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white shadow-md overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_4.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white shadow-md overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_5.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <a
-            href="productpage.html"
-            class="bg-white bag shadow-md cursor-pointer overflow-hidden relative"
-          >
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Prada Lorem ipsu
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </a>
-          <div class="bg-white shadow-md bag overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_2.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white shadow-md bag overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_3.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white shadow-md overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_4.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
-                  <i class="ri-heart-add-2-line text-lg"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white shadow-md overflow-hidden relative">
-            <!-- Image covering full top width -->
-            <div class="w-full aspect-square bg-gray-100 overflow-hidden">
-              <img
-                src="assets/img/bag_5.jpg"
-                alt="Product"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <!-- Product info positioned just below image -->
-            <div class="p-3">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-sm font-semibold text-gray-900">
-                    Product Name
-                  </h3>
-                  <p class="text-gray-600 text-sm mt-1">$49.99</p>
-                </div>
-                <button class="text-blue-600 hover:text-blue-800">
+                <button
+                  class="text-pink-300 hover:text-pink-400 lg:text-amber-400 lg:hover:text-amber-300"
+                >
                   <i class="ri-heart-add-2-line text-lg"></i>
                 </button>
               </div>

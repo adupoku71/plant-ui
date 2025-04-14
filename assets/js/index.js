@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cancel = document.getElementById("cancel")
   const overlay = document.getElementById("search-overlay")
   const logo = document.getElementById("logo")
-  const accountAndCart = document.querySelector(
-    ".flex.gap-3.items-center.h-full"
-  ) // More reliable selector
+  const accountAndCart = document.querySelector("#account-and-cart") // More reliable selector
 
   // Constants
   const navbarHeight = navbar.offsetHeight
