@@ -26,7 +26,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
           <div class="flex-shrink-0 flex items-center">
-            <a href="ecommerce.html" class="font-bold text-xl">SHOP</a>
+            <span class="font-bold text-xl">CART</span>
           </div>
           <div class="hidden md:block">
             <div class="ml-4 flex items-center space-x-4">
@@ -44,343 +44,315 @@
       </div>
     </nav>
 
+    <!-- Bottom Menu -->
+    <div
+      class="fixed z-50 bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 md:hidden"
+    >
+      <div class="flex justify-around items-center pt-2 pb-1.5">
+        <a
+          href="ecommerce.html"
+          class="flex flex-col items-center text-pink-300"
+        >
+          <i class="ri-home-4-fill text-xl"></i>
+          <span class="text-xs">Home</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-600">
+          <i class="ri-apps-2-line text-xl"></i>
+          <span class="text-xs">Categories</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-600 relative">
+          <i class="ri-user-3-line text-xl"></i>
+          <span class="text-xs">Account</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-600">
+          <i class="ri-customer-service-2-line text-xl"></i>
+          <span class="text-xs">Contact Us</span>
+        </a>
+      </div>
+    </div>
+
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto pt-20 pb-24 px-4 sm:px-6 lg:px-8">
+    <main class="max-w-7xl mx-auto pt-20 pb-32 px-4 sm:px-6 lg:px-8">
       <div class="lg:grid lg:grid-cols-12 lg:gap-x-12">
         <!-- Cart Items -->
-        <div class="lg:col-span-8">
-          <h1 class="text-2xl font-bold text-gray-900 mb-8">
+        <div class="lg:col-span-12">
+          <!-- <h1 class="text-2xl font-bold text-gray-900 mb-8">
             Your Shopping Cart
-          </h1>
+          </h1> -->
 
           <!-- Cart Items List -->
-          <div class="space-y-6">
+          <div class="space-y-4">
             <!-- Cart Item 1 -->
+
             <div
-              class="cart-item bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-200 relative"
+              class="cart-item bg-white p-3 sm:p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-200 relative"
             >
-              <div class="flex flex-col sm:flex-row">
+              <div class="flex">
                 <div
-                  class="flex-shrink-0 w-full sm:w-32 h-32 bg-gray-100 rounded-md overflow-hidden"
+                  class="flex-shrink-0 w-20 h-20 sm:w-32 sm:h-32 bg-gray-100 rounded-md overflow-hidden"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1591348122449-02525d70379b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
-                    alt="Premium Leather Handbag"
+                    src="assets/img/bag.jpg"
+                    alt="Designer Wallet"
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <div class="mt-4 sm:mt-0 sm:ml-6 flex-1">
+                <div class="ml-3 sm:ml-6 flex-1 min-w-0">
                   <div class="flex justify-between">
-                    <h2 class="text-lg font-medium text-gray-900">
-                      Premium Leather Handbag
+                    <h2
+                      class="text-sm sm:text-lg font-medium text-gray-900 truncate"
+                    >
+                      Designer Wallet
+                    </h2>
+                    <button
+                      class="remove-item text-gray-400 hover:text-red-500 transition duration-150"
+                    >
+                      <i class="ri-close-line text-lg sm:text-xl"></i>
+                    </button>
+                  </div>
+                  <p class="mt-1 text-xs sm:text-sm text-gray-500 truncate">
+                    Color: Brown | Size: One Size
+                  </p>
+                  <div class="mt-2 sm:mt-4 flex items-center justify-between">
+                    <div
+                      class="flex items-center border rounded-md text-xs sm:text-base"
+                    >
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
+                      >
+                        -
+                      </button>
+                      <span class="px-2 sm:px-4 py-1 border-x">1</span>
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <p
+                      class="text-base sm:text-lg font-medium text-gray-900 ml-2"
+                    >
+                      $79.99
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cart Item 2 -->
+            <div
+              class="cart-item bg-white p-3 sm:p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-200 relative"
+            >
+              <div class="flex">
+                <div
+                  class="flex-shrink-0 w-20 h-20 sm:w-32 sm:h-32 bg-gray-100 rounded-md overflow-hidden"
+                >
+                  <img
+                    src="assets/img/bag_3.jpg"
+                    alt="Designer Wallet"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="ml-3 sm:ml-6 flex-1 min-w-0">
+                  <div class="flex justify-between">
+                    <h2
+                      class="text-sm sm:text-lg font-medium text-gray-900 truncate"
+                    >
+                      Designer Wallet
+                    </h2>
+                    <button
+                      class="remove-item text-gray-400 hover:text-red-500 transition duration-150"
+                    >
+                      <i class="ri-close-line text-lg sm:text-xl"></i>
+                    </button>
+                  </div>
+                  <p class="mt-1 text-xs sm:text-sm text-gray-500 truncate">
+                    Color: Brown | Size: One Size
+                  </p>
+                  <div class="mt-2 sm:mt-4 flex items-center justify-between">
+                    <div
+                      class="flex items-center border rounded-md text-xs sm:text-base"
+                    >
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
+                      >
+                        -
+                      </button>
+                      <span class="px-2 sm:px-4 py-1 border-x">1</span>
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <p
+                      class="text-base sm:text-lg font-medium text-gray-900 ml-2"
+                    >
+                      $79.99
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="cart-item bg-white p-3 sm:p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-200 relative"
+            >
+              <div class="flex">
+                <div
+                  class="flex-shrink-0 w-20 h-20 sm:w-32 sm:h-32 bg-gray-100 rounded-md overflow-hidden"
+                >
+                  <img
+                    src="assets/img/bag_2.jpg"
+                    alt="Designer Wallet"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="ml-3 sm:ml-6 flex-1 min-w-0">
+                  <div class="flex justify-between">
+                    <h2
+                      class="text-sm sm:text-lg font-medium text-gray-900 truncate"
+                    >
+                      Designer Wallet
                     </h2>
                     <button
                       class="remove-item opacity-0 sm:opacity-100 text-gray-400 hover:text-red-500 transition duration-150"
                     >
-                      <i class="ri-close-line text-xl"></i>
+                      <i class="ri-close-line text-lg sm:text-xl"></i>
                     </button>
                   </div>
-                  <p class="mt-1 text-sm text-gray-500">
-                    Color: Black | Size: Medium
-                  </p>
-                  <div class="mt-4 flex items-center justify-between">
-                    <div class="flex items-center border rounded-md w-fit">
-                      <button class="px-3 py-1 text-gray-600 hover:bg-gray-100">
-                        -
-                      </button>
-                      <span class="px-4 py-1 border-x">1</span>
-                      <button class="px-3 py-1 text-gray-600 hover:bg-gray-100">
-                        +
-                      </button>
-                    </div>
-                    <p class="text-lg font-medium text-gray-900">$149.99</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Cart Item 2 -->
-            <div
-              class="cart-item bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-200 relative"
-            >
-              <div class="flex flex-col sm:flex-row">
-                <div
-                  class="flex-shrink-0 w-full sm:w-32 h-32 bg-gray-100 rounded-md overflow-hidden"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
-                    alt="Designer Wallet"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <div class="mt-4 sm:mt-0 sm:ml-6 flex-1">
-                  <div class="flex justify-between">
-                    <h2 class="text-lg font-medium text-gray-900">
-                      Designer Walletfdddddddddb
-                    </h2>
-                    <button
-                      class="remove-item opacity-1 sm:opacity-100 text-gray-400 hover:text-red-500 transition duration-150"
-                    >
-                      <i class="ri-close-line text-xl"></i>
-                    </button>
-                  </div>
-                  <p class="mt-1 text-sm text-gray-500">
+                  <p class="mt-1 text-xs sm:text-sm text-gray-500 truncate">
                     Color: Brown | Size: One Size
                   </p>
-                  <div class="mt-4 flex items-center justify-between">
-                    <div class="flex items-center border rounded-md w-fit">
-                      <button class="px-3 py-1 text-gray-600 hover:bg-gray-100">
+                  <div class="mt-2 sm:mt-4 flex items-center justify-between">
+                    <div
+                      class="flex items-center border rounded-md text-xs sm:text-base"
+                    >
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
+                      >
                         -
                       </button>
-                      <span class="px-4 py-1 border-x">1</span>
-                      <button class="px-3 py-1 text-gray-600 hover:bg-gray-100">
+                      <span class="px-2 sm:px-4 py-1 border-x">1</span>
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
+                      >
                         +
                       </button>
                     </div>
-                    <p class="text-lg font-medium text-gray-900">$79.99</p>
+                    <p
+                      class="text-base sm:text-lg font-medium text-gray-900 ml-2"
+                    >
+                      $79.99
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              class="cart-item bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-200 relative overflow-hidden"
+              class="cart-item bg-white p-3 sm:p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-200 relative"
             >
-              <!-- Image background for mobile -->
-              <div class="sm:hidden w-full h-40 bg-gray-100 relative">
-                <img
-                  src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
-                  alt="Designer Wallet"
-                  class="w-full h-full object-cover"
-                />
-                <!-- Semi-transparent overlay for text readability -->
+              <div class="flex">
                 <div
-                  class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
-                >
-                  <div class="flex justify-between items-end">
-                    <div>
-                      <h2 class="text-lg font-medium text-white">
-                        Designer Wallet
-                      </h2>
-                      <p class="text-sm text-white/80">
-                        Color: Brown | Size: One Size
-                      </p>
-                    </div>
-                    <p class="text-lg font-medium text-white">$79.99</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Desktop layout (unchanged) -->
-              <div class="hidden sm:flex p-4">
-                <div
-                  class="flex-shrink-0 w-32 h-32 bg-gray-100 rounded-md overflow-hidden"
+                  class="flex-shrink-0 w-20 h-20 sm:w-32 sm:h-32 bg-gray-100 rounded-md overflow-hidden"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+                    src="assets/img/bag_5.jpg"
                     alt="Designer Wallet"
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <div class="mt-0 ml-6 flex-1">
+                <div class="ml-3 sm:ml-6 flex-1 min-w-0">
                   <div class="flex justify-between">
-                    <h2 class="text-lg font-medium text-gray-900">
+                    <h2
+                      class="text-sm sm:text-lg font-medium text-gray-900 truncate"
+                    >
                       Designer Wallet
                     </h2>
                     <button
-                      class="text-gray-400 hover:text-red-500 transition duration-150"
+                      class="remove-item text-gray-400 hover:text-red-500 transition duration-150"
                     >
-                      <i class="ri-close-line text-xl"></i>
+                      <i class="ri-close-line text-lg sm:text-xl"></i>
                     </button>
                   </div>
-                  <p class="mt-1 text-sm text-gray-500">
+                  <p class="mt-1 text-xs sm:text-sm text-gray-500 truncate">
                     Color: Brown | Size: One Size
                   </p>
-                  <div class="mt-4 flex items-center justify-between">
-                    <div class="flex items-center border rounded-md w-fit">
-                      <button class="px-3 py-1 text-gray-600 hover:bg-gray-100">
+                  <div class="mt-2 sm:mt-4 flex items-center justify-between">
+                    <div
+                      class="flex items-center border rounded-md text-xs sm:text-base"
+                    >
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
+                      >
                         -
                       </button>
-                      <span class="px-4 py-1 border-x">1</span>
-                      <button class="px-3 py-1 text-gray-600 hover:bg-gray-100">
+                      <span class="px-2 sm:px-4 py-1 border-x">1</span>
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
+                      >
                         +
                       </button>
                     </div>
-                    <p class="text-lg font-medium text-gray-900">$79.99</p>
+                    <p
+                      class="text-base sm:text-lg font-medium text-gray-900 ml-2"
+                    >
+                      $79.99
+                    </p>
                   </div>
-                </div>
-              </div>
-
-              <!-- Quantity controls for mobile -->
-              <div class="sm:hidden p-4">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center border rounded-md w-fit">
-                    <button class="px-3 py-1 text-gray-600 hover:bg-gray-100">
-                      -
-                    </button>
-                    <span class="px-4 py-1 border-x">1</span>
-                    <button class="px-3 py-1 text-gray-600 hover:bg-gray-100">
-                      +
-                    </button>
-                  </div>
-                  <button
-                    class="text-red-500 hover:text-red-700 transition duration-150"
-                  >
-                    <i class="ri-delete-bin-6-line text-xl"></i>
-                  </button>
                 </div>
               </div>
             </div>
-
             <div
-              class="cart-item bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group"
+              class="cart-item bg-white p-3 sm:p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-200 relative"
             >
-              <!-- Mobile & Desktop Layout -->
-              <div class="flex flex-col sm:flex-row">
-                <!-- Image Section (Full-width on mobile) -->
-                <div class="relative sm:w-1/3 aspect-square bg-gray-100">
+              <div class="flex">
+                <div
+                  class="flex-shrink-0 w-20 h-20 sm:w-32 sm:h-32 bg-gray-100 rounded-md overflow-hidden"
+                >
                   <img
-                    src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+                    src="assets/img/bag_4.jpg"
                     alt="Designer Wallet"
                     class="w-full h-full object-cover"
                   />
-                  <!-- Mobile Delete Button -->
-                  <button
-                    class="sm:hidden absolute top-3 right-3 bg-white/90 rounded-full p-1.5 shadow-sm hover:bg-white transition-all"
-                  >
-                    <i class="ri-close-line text-lg text-red-500"></i>
-                  </button>
                 </div>
-
-                <!-- Content Section -->
-                <div class="p-4 sm:p-5 flex-1 flex flex-col">
-                  <div class="flex justify-between items-start">
-                    <div>
-                      <h3 class="text-lg font-semibold text-gray-900">
-                        Designer Wallet
-                      </h3>
-                      <p class="text-sm text-gray-500 mt-1">Brown | One Size</p>
-                    </div>
-                    <!-- Desktop Delete Button -->
-                    <button
-                      class="hidden sm:block text-gray-400 hover:text-red-500 transition-all"
+                <div class="ml-3 sm:ml-6 flex-1 min-w-0">
+                  <div class="flex justify-between">
+                    <h2
+                      class="text-sm sm:text-lg font-medium text-gray-900 truncate"
                     >
-                      <i class="ri-close-line text-xl"></i>
+                      Designer Wallet
+                    </h2>
+                    <button
+                      class="remove-item text-gray-400 hover:text-red-500 transition duration-150"
+                    >
+                      <i class="ri-close-line text-lg sm:text-xl"></i>
                     </button>
                   </div>
-
-                  <!-- Price & Quantity -->
-                  <div class="mt-4 sm:mt-auto flex items-end justify-between">
-                    <div class="flex items-center gap-3">
-                      <div
-                        class="flex items-center border rounded-lg divide-x overflow-hidden"
+                  <p class="mt-1 text-xs sm:text-sm text-gray-500 truncate">
+                    Color: Brown | Size: One Size
+                  </p>
+                  <div class="mt-2 sm:mt-4 flex items-center justify-between">
+                    <div
+                      class="flex items-center border rounded-md text-xs sm:text-base"
+                    >
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
                       >
-                        <button
-                          class="px-3 py-2 text-gray-600 hover:bg-gray-50 transition-colors"
-                        >
-                          <i class="ri-subtract-line"></i>
-                        </button>
-                        <span class="px-4 py-2 text-center w-10">1</span>
-                        <button
-                          class="px-3 py-2 text-gray-600 hover:bg-gray-50 transition-colors"
-                        >
-                          <i class="ri-add-line"></i>
-                        </button>
-                      </div>
+                        -
+                      </button>
+                      <span class="px-2 sm:px-4 py-1 border-x">1</span>
+                      <button
+                        class="px-2 sm:px-3 py-1 text-gray-600 hover:bg-gray-100"
+                      >
+                        +
+                      </button>
                     </div>
-                    <p class="text-lg font-bold text-gray-900">$79.99</p>
-                  </div>
-
-                  <!-- Mobile Quick Actions -->
-                  <div
-                    class="sm:hidden flex justify-between mt-4 pt-4 border-t border-gray-100"
-                  >
-                    <button
-                      class="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                    <p
+                      class="text-base sm:text-lg font-medium text-gray-900 ml-2"
                     >
-                      <i class="ri-heart-line"></i> Save
-                    </button>
-                    <button
-                      class="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center gap-1"
-                    >
-                      <i class="ri-repeat-line"></i> Compare
-                    </button>
+                      $79.99
+                    </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Order Note -->
-          <div
-            class="mt-8 bg-white p-4 rounded-lg shadow-sm border border-gray-100"
-          >
-            <label
-              for="order-note"
-              class="block text-sm font-medium text-gray-700 mb-2"
-              >Add Order Note</label
-            >
-            <textarea
-              id="order-note"
-              rows="3"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent"
-              placeholder="Special instructions for your order..."
-            ></textarea>
-          </div>
-        </div>
-
-        <!-- Order Summary -->
-        <div class="lg:col-span-4 mt-8 lg:mt-0">
-          <div
-            class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 sticky top-24"
-          >
-            <h2 class="text-lg font-medium text-gray-900 mb-6">
-              Order Summary
-            </h2>
-
-            <div class="space-y-4">
-              <div class="flex justify-between">
-                <span class="text-gray-600">Subtotal</span>
-                <span class="text-gray-900">$229.98</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">Shipping</span>
-                <span class="text-gray-900">Free</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">Tax</span>
-                <span class="text-gray-900">$18.40</span>
-              </div>
-              <div class="border-t border-gray-200 pt-4 flex justify-between">
-                <span class="font-medium text-gray-900">Total</span>
-                <span class="font-bold text-lg text-gray-900">$248.38</span>
-              </div>
-            </div>
-
-            <button
-              class="mt-6 w-full bg-amber-400 text-gray-900 py-3 px-4 rounded-md font-medium hover:bg-amber-300 transition duration-200 flex items-center justify-center"
-            >
-              <i class="ri-lock-2-line mr-2"></i> Proceed to Checkout
-            </button>
-
-            <div class="mt-4 flex items-center justify-center space-x-2">
-              <span class="text-sm text-gray-500">or</span>
-              <a
-                href="#"
-                class="text-sm font-medium text-amber-600 hover:text-amber-500"
-                >Continue Shopping</a
-              >
-            </div>
-
-            <div class="mt-6 border-t border-gray-200 pt-6">
-              <h3 class="text-sm font-medium text-gray-900 mb-2">
-                Accepted Payment Methods
-              </h3>
-              <div class="flex space-x-4">
-                <i class="ri-visa-fill text-2xl text-blue-800"></i>
-                <i class="ri-mastercard-fill text-2xl text-red-600"></i>
-                <i class="ri-paypal-fill text-2xl text-blue-600"></i>
-                <i class="ri-apple-fill text-2xl"></i>
-                <i class="ri-google-fill text-2xl text-green-600"></i>
               </div>
             </div>
           </div>
@@ -388,60 +360,25 @@
       </div>
     </main>
 
-    <!-- Mobile Checkout Bar -->
+    <!-- Mobile Checkout Bar - Fixed above bottom menu -->
+
     <div
-      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg md:hidden"
+      class="fixed z-40 bottom-14 left-0 right-0 bg-white shadow-md border-t border-gray-100 px-4 py-3 md:hidden"
     >
-      <div class="flex justify-between items-center">
-        <div>
-          <p class="text-sm text-gray-500">Total</p>
-          <p class="font-bold text-lg text-gray-900">$248.38</p>
-        </div>
-        <button
-          class="bg-amber-400 text-gray-900 py-2 px-6 rounded-md font-medium hover:bg-amber-300 transition duration-200"
-        >
-          Checkout
-        </button>
-      </div>
+      <button
+        class="w-full md:bg-amber-400 py-3 px-4 rounded-lg font-medium md:hover:bg-amber-300 transition duration-200 shadow-[-2px_16px_12px_-6px_rgba(186,179,179,0.75)] flex items-center justify-center bg-pink-300 text-white"
+      >
+        <i class="ri-lock-2-line mr-2"></i> Checkout - $248.38
+      </button>
     </div>
-
-    <script>
-      // Quantity adjustment functionality
-      document.querySelectorAll(".cart-item").forEach((item) => {
-        const minusBtn = item.querySelector("button:first-of-type")
-        const plusBtn = item.querySelector("button:last-of-type")
-        const quantityDisplay = item.querySelector("span")
-        const removeBtn = item.querySelector(".remove-item")
-
-        let quantity = 1
-
-        minusBtn.addEventListener("click", () => {
-          if (quantity > 1) {
-            quantity--
-            quantityDisplay.textContent = quantity
-            updateCartTotal()
-          }
-        })
-
-        plusBtn.addEventListener("click", () => {
-          quantity++
-          quantityDisplay.textContent = quantity
-          updateCartTotal()
-        })
-
-        removeBtn.addEventListener("click", () => {
-          item.style.opacity = "0"
-          setTimeout(() => {
-            item.remove()
-            updateCartTotal()
-          }, 300)
-        })
-      })
-
-      function updateCartTotal() {
-        // In a real app, you would calculate the total based on all items
-        console.log("Cart total would be updated here")
-      }
-    </script>
+    <!-- Desktop Checkout Button -->
+    <div class="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+      <button
+        id="checkout"
+        class="w-full max-w-md mx-auto bg-amber-400 text-gray-900 py-3 px-4 rounded-lg font-medium hover:bg-amber-300 transition duration-200 shadow-sm flex items-center justify-center"
+      >
+        <i class="ri-lock-2-line mr-2"></i> Proceed to Checkout - $248.38
+      </button>
+    </div>
   </body>
 </html>
