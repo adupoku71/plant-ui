@@ -109,7 +109,7 @@
           <!-- Search Overlay -->
           <div
             id="search-overlay"
-            class="max-md:fixed max-md:bottom-0 max-md:h-[100vh] absolute max-md:left-0 bg-white w-full top-[39px] left-0 max-md:top-14 md:rounded-lg bottom-0 hidden"
+            class="max-md:fixed z-[100] max-md:bottom-0 max-md:h-[100vh] absolute max-md:left-0 bg-white w-full top-[39px] left-0 max-md:top-14 md:rounded-lg bottom-0 hidden"
           >
             <!-- Mobile: Fullscreen | Desktop: Dropdown under navbar -->
             <div
@@ -169,10 +169,13 @@
             <!-- <span class="material-icons">account_circle</span> -->
           </div>
 
-          <a href="#" class="flex flex-col items-center text-gray-600 relative">
+          <a
+            href="cartpage.html"
+            class="flex flex-col items-center text-gray-600 relative"
+          >
             <span class="material-symbols-outlined">shopping_cart</span>
             <span
-              class="absolute -top-1 -right-2 bg-pink-300 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
+              class="absolute -top-1 -right-2 bg-pink-300 md:bg-amber-400 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
               >4</span
             >
           </a>
@@ -185,6 +188,8 @@
         </div>
       </div>
     </div>
+
+    <!-- bottom menu -->
 
     <!-- Desktop Navbar (hidden on mobile) -->
 
@@ -200,7 +205,7 @@
           <div class="product-image-container">
             <!-- Main Image -->
             <div
-              class="aspect-square bg-gray-100 md:rounded-lg overflow-hidden mb-4"
+              class="aspect-square bg-gray-100 md:rounded-lg overflow-hidden mb-3"
             >
               <img
                 id="main-image"
@@ -212,10 +217,10 @@
 
             <!-- Thumbnails -->
             <div
-              class="image-gallery flex gap-3 overflow-x-auto pb-4 mt-4 px-2"
+              class="image-gallery flex gap-3 overflow-x-auto pb-1 md:pb-4 md:mt-4 px-2 mt-0"
             >
               <button
-                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
+                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:bg-pink-300 md:hover:border-amber-400 transition-all"
                 data-image="assets/img/bag.jpg"
               >
                 <img
@@ -225,7 +230,7 @@
                 />
               </button>
               <button
-                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
+                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:bg-pink-300 md:hover:border-amber-400 transition-all"
                 data-image="assets/img/bag_2.jpg"
               >
                 <img
@@ -235,7 +240,7 @@
                 />
               </button>
               <button
-                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
+                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:bg-pink-300 md:hover:border-amber-400 transition-all"
                 data-image="assets/img/bag_3.jpg"
               >
                 <img
@@ -245,7 +250,7 @@
                 />
               </button>
               <button
-                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:border-amber-400 transition-all"
+                class="thumbnail-btn flex-shrink-0 w-16 h-16 border-2 border-transparent rounded-md overflow-hidden hover:bg-pink-300 md:hover:border-amber-400 transition-all"
                 data-image="assets/img/bag_5.jpg"
               >
                 <img
@@ -260,11 +265,11 @@
 
         <!-- Product Info -->
         <div class="px-2 lg:p-0 lg:pl-4">
-          <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+          <h1 class="text-xl md:text-3xl font-bold text-gray-900 mb-1">
             Premium Leather Handbag
           </h1>
 
-          <div class="mb-3">
+          <div class="md:mb-4 mb-1.5">
             <span class="text-2xl font-bold text-gray-900">$149.99</span>
             <span class="text-gray-500 line-through ml-2">$199.99</span>
             <span
@@ -333,20 +338,20 @@
 
     <!-- Mobile Add-to-Cart Sticky Bar -->
     <div
-      class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg"
+      class="fixed z-40 bottom-0 left-0 flex gap-8 right-0 bg-white shadow-md border-t border-gray-100 px-4 py-3 md:hidden"
     >
-      <div class="flex gap-4">
-        <button
-          class="w-12 h-12 flex items-center justify-center border rounded-md hover:bg-gray-50"
-        >
-          <i class="ri-heart-3-line text-xl"></i>
-        </button>
-        <button
-          class="flex-1 bg-gray-900 text-white py-3 px-6 rounded-md font-medium hover:bg-gray-800 transition"
-        >
-          Add to Cart - $149.99
-        </button>
-      </div>
+      <a
+        href="ecommerce.html"
+        class="flex items-center text-pink-300 border border-pink-300 rounded-md px-4"
+      >
+        <i class="ri-home-4-line text-lg"></i>
+        <!-- <span class="text-xs">Home</span> -->
+      </a>
+      <button
+        class="w-full md:bg-amber-400 py-3 px-4 rounded-lg font-medium md:hover:bg-amber-300 transition duration-200 shadow-[-2px_16px_12px_-6px_rgba(186,179,179,0.75)] flex items-center justify-center bg-pink-300 text-white"
+      >
+        Add to Cart - $248.38
+      </button>
     </div>
 
     <script>
@@ -399,38 +404,26 @@
             })
           }
         }
-        // Mobile Search functionality
-
-        //   search.addEventListener("click", () => {
-        //     console.log("clicked")
-        //     overlay.classList.remove("hidden")
-
-        //     // Only hide these elements on mobile (screen width less than 768px)
-        //     if (window.innerWidth < 768) {
-        //       cancel.classList.remove("hidden")
-        //       logo.classList.add("hidden")
-        //       accountAndCart.classList.add("hidden")
-        //     }
-        //   })
-
-        //   cancel.addEventListener("click", () => {
-        //     overlay.classList.add("hidden")
-
-        //     // Only show these elements if they were hidden (mobile)
-        //     if (window.innerWidth < 768) {
-        //       cancel.classList.add("hidden")
-        //       logo.classList.remove("hidden")
-        //       accountAndCart.classList.remove("hidden")
-        //     }
-        //   })
-        // Store the original opacity values
       }
       let originalNavbarOpacity = null
       let originalChildrenOpacity = {}
+      // Add this at the top of your script to track body scroll state
+      let isBodyScrollLocked = false
+      let scrollPosition = 0
 
+      // Modify your search click event
       search.addEventListener("click", () => {
         console.log("clicked")
         overlay.classList.remove("hidden")
+
+        // Lock scroll and save position
+        scrollPosition = window.scrollY
+        document.body.style.overflow = "hidden"
+        document.body.style.position = "fixed"
+        document.body.style.top = `-${scrollPosition}px`
+        document.body.style.width = "100%"
+        isBodyScrollLocked = true
+
         const navbarChildren = mobileNavbar.querySelectorAll("*")
 
         // Save current opacity values before changing them
@@ -456,7 +449,7 @@
         }
       })
 
-      // Function to restore original opacity
+      // Modify your restore function to handle scroll
       function restoreOriginalOpacity() {
         if (originalNavbarOpacity !== null) {
           mobileNavbar.style.backgroundColor = originalNavbarOpacity
@@ -465,9 +458,19 @@
             child.style.opacity = originalChildrenOpacity[key] || ""
           })
         }
+
+        // Restore scroll if it was locked
+        if (isBodyScrollLocked) {
+          document.body.style.overflow = ""
+          document.body.style.position = ""
+          document.body.style.top = ""
+          document.body.style.width = ""
+          window.scrollTo(0, scrollPosition)
+          isBodyScrollLocked = false
+        }
       }
 
-      // Restore when closing search
+      // Update all cancel/close event handlers to use restoreOriginalOpacity
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) {
           overlay.classList.add("hidden")
